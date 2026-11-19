@@ -74,3 +74,13 @@ neu-research-writer/
 
 - **Viết Chương Thảo luận & Khuyến nghị:**
   > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` và `references/05-implications-and-conclusion.md` dựa trên `project-context.md` và `chapter-handoff.md`. Hãy viết toàn văn Mục 4.1 (Thảo luận đối chiếu nghiên cứu trước) và Mục 4.2 (Hệ thống khuyến nghị neo số liệu cho các chủ thể đã chốt)."
+
+
+## 6. Nguyên tắc linh hoạt khi có dữ liệu thật & ý tưởng mới (Cơ chế 2 tầng)
+
+Bộ Skill này được thiết kế như một **tài liệu sống (living workflow)** đồng hành cùng nhóm từ lúc bắt đầu viết đến khi có kết quả chạy mô hình thực tế:
+
+- **Tầng 1 - Chuẩn khoa học bắt buộc (Luôn giữ vững):** Không bịa trích dẫn hay số liệu; số liệu trong văn bản khớp 100% với bảng phần mềm; trung thực với biến bị loại hoặc giả thuyết bị bác bỏ; tuân thủ chuẩn phương pháp (PLS-SEM/CB-SEM, luật biến kiểm soát đơn mục), văn phong học thuật NEU và APA 7th.
+- **Tầng 2 - Mở hoàn toàn cho dữ liệu mới & cách viết hay hơn:**
+  - Thành viên hoàn toàn tự do nạp thêm **bài báo mới, lập luận mới, kiểm định bổ sung** hoặc đề xuất **cách triển khai đoạn văn mượt hơn** so với gợi ý mặc định trong `references/`.
+  - Khi chạy mô hình ra **con số thực tế khác với dự kiến đề cương**, dữ liệu thật luôn có quyền ưu tiên cao nhất. AI sẽ phân tích theo số liệu mới và tự động tạo mục **Sync Alert** ở cuối câu trả lời để thành viên cập nhật nhanh vào `project-context.md` / `chapter-handoff.md` cho cả nhóm đồng bộ.

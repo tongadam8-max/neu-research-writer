@@ -84,3 +84,14 @@ Bộ Skill này được thiết kế như một **tài liệu sống (living wo
 - **Tầng 2 - Mở hoàn toàn cho dữ liệu mới & cách viết hay hơn:**
   - Thành viên hoàn toàn tự do nạp thêm **bài báo mới, lập luận mới, kiểm định bổ sung** hoặc đề xuất **cách triển khai đoạn văn mượt hơn** so với gợi ý mặc định trong `references/`.
   - Khi chạy mô hình ra **con số thực tế khác với dự kiến đề cương**, dữ liệu thật luôn có quyền ưu tiên cao nhất. AI sẽ phân tích theo số liệu mới và tự động tạo mục **Sync Alert** ở cuối câu trả lời để thành viên cập nhật nhanh vào `project-context.md` / `chapter-handoff.md` cho cả nhóm đồng bộ.
+
+
+## 7. Cơ chế Tự kiểm định 2 vòng & Phản biện trọng tâm (Bản v1.2)
+
+Để đảm bảo bản thảo đạt độ chỉn chu cao nhất cho bài nghiên cứu học thuật mà không làm chậm tiến độ của thành viên:
+
+- **Tự kiểm định 2 vòng độc lập (2-Pass Self-Audit):** Trước khi xuất bản thảo cuối cùng, AI tự động chạy qua 2 vòng lọc riêng biệt trong `checklists/chapter-qa-gate.md`:
+  1. *Vòng 1 (Cốt lõi khoa học & Dữ liệu):* Khớp tuyệt đối số liệu bảng - văn bản, nguồn trích dẫn, luật phương pháp và độ chặt của lập luận.
+  2. *Vòng 2 (Trình bày & Độ tự nhiên học thuật):* Soát đánh số Bảng/Hình, chuẩn APA 7th, dấu thập phân, chuyển ý giữa các đoạn và gọt sạch câu từ kiểu "văn AI" sáo rỗng.
+- **Hỏi chốt thông minh trước khi viết:** AI chỉ dừng lại hỏi tối đa **2-3 câu ngắn gọn** kèm gợi ý phương án khi yêu cầu thực sự thiếu dữ liệu cốt lõi, mơ hồ hoặc có nguy cơ lệch trọng tâm đề tài. Nếu đầu vào đã rõ, AI tiến hành viết ngay.
+- **Phản biện trọng tâm khách quan sau khi viết:** Cuối mỗi bản thảo, mục *Phản biện trọng tâm* sẽ gợi mở các khía cạnh chưa được khai thác hết chiều sâu lý thuyết/thực nghiệm. Nếu nội dung của thành viên đã chặt chẽ, AI ghi nhận đúng thực tế và tuyệt đối không tự bịa thêm lỗi góp ý.

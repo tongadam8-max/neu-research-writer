@@ -59,7 +59,10 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
         print(f"Không tìm thấy thư mục {input_folder}")
         return
 
-    md_files = sorted([f for f in os.listdir(input_folder) if f.endswith('.md') and not f.startswith('test-')])
+    all_md = sorted([f for f in os.listdir(input_folder) if f.endswith('.md')])
+    md_files = [f for f in all_md if not f.startswith('test-')]
+    if not md_files:
+        md_files = all_md
     
     for md_file in md_files:
         with open(os.path.join(input_folder, md_file), 'r', encoding='utf-8') as f:

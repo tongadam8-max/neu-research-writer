@@ -8,17 +8,28 @@ from bs4 import BeautifulSoup
 import markdown
 
 def clean_latex_and_text(text):
+    # 1. Chuyển đổi mã LaTeX toán học
     mapping = {
         r'$\beta$': 'β', r'$p$': 'p', r'$t$': 't', r'$R^2$': 'R²', r'$f^2$': 'f²',
         r'$\alpha$': 'α', r'$\rho$': 'ρ', r'$\rightarrow$': '→', r'$\times$': 'x',
         r'$N$': 'N', r'$100\%$': '100%', r'$\le$': '≤', r'$\ge$': '≥',
-        r'\beta': 'β', r'\rightarrow': '→', r'\times': 'x', r'\alpha': 'α'
+        r'\beta': 'β', r'\rightarrow': '→', r'\times': 'x', r'\alpha': 'α',
+        # Thay thế gạch ngang dài thành gạch ngắn
+        '—': '-'
     }
     for k, v in mapping.items():
         text = text.replace(k, v)
     text = text.replace('$', '')
-    # Tự động loại bỏ mọi dấu gạch ngang, chấm tròn hoặc số thứ tự ở đầu dòng do AI sinh ra
-    text = re.sub(r'^\s*[-•\d\.]+\s*', '', text) 
+    
+    # 2. Xóa gạch đầu dòng/chấm tròn/số thứ tự do AI lỡ sinh ra ở đầu dòng
+    text = re.sub(r'^\s*[-•\d\.]+\s*', '', text)
+    
+    # 3. Ép chuẩn Smart Quotes (Dấu ngoặc kép uốn cong “...”)
+    # Thay thế dấu ngoặc kép thẳng "..." thành “...”
+    text = re.sub(r'"([^"]*)"', r'“\1”', text)
+    # Thay thế dấu nháy đơn '...' (nếu nó bọc một cụm từ) thành “...”
+    text = re.sub(r"(^|\s)'([^']*)'(?=\s|[.,;:!?]|$)", r'\1“\2”', text)
+
     return text.strip()
 
 def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
@@ -47,7 +58,7 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
         with open(os.path.join(input_folder, md_file), 'r', encoding='utf-8') as f:
             content = f.read()
             
-            # CÀN QUÉT ĐỒ THỊ ASCII: Bắt các khối code hoặc các dòng chứa nhiều ký tự vẽ hình
+            # CÀN QUÉT ĐỒ THỊ ASCII
             content = re.sub(r'```.*?```', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content, flags=re.DOTALL)
             content = re.sub(r'(?:[ /\|+-]{3,}\n){2,}', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content)
 
@@ -67,7 +78,7 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                     heading.paragraph_format.first_line_indent = Cm(0)
                 
                 elif element.name in ['p', 'ul', 'ol']:
-                    # ÉP CHẺ DÒNG (HARD RETURN) ĐỂ CHỐNG KÉO GIÃN CHỮ VÀ CHUẨN HÓA LIST
+                    # ÉP CHẺ DÒNG (HARD RETURN)
                     raw_lines = []
                     if element.name in ['ul', 'ol']:
                         for li in element.find_all('li'):

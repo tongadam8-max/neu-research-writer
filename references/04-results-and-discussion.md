@@ -17,6 +17,8 @@
 - Chỉ sử dụng chính xác con số có trong output phần mềm do thành viên cung cấp.
 - Trước khi viết lời bình cho bất kỳ bảng nào, tự cộng kiểm tra lại tổng số quan sát ($N$) và tổng tỷ lệ phần trăm ($100\%$).
 - Mọi con số nêu trong đoạn văn bắt buộc phải khớp từng chữ số thập phân với bảng ngay cạnh. Thống nhất dùng dấu phẩy `,` cho số thập phân trong văn bản tiếng Việt (ví dụ: `0,752` hoặc `45,6%`), trừ khi bảng xuất gốc yêu cầu giữ dấu chấm `.` (phải thống nhất toàn bài).
+- Tuyệt đối KHÔNG vẽ đồ thị (như Simple Slope) bằng các ký tự xếp hình (ASCII Art). Chỉ phân tích bằng văn bản và để lại dòng thẻ `[CHÈN HÌNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]` để thành viên tự dán ảnh thật vào.
+- Ưu tiên sử dụng trực tiếp các ký tự Unicode (β, p, t, R², f², →, ×) thay vì bọc trong mã LaTeX ($...$) để văn bản giữ được sự trong sáng.
 
 ### 2. Trình tự báo cáo chuẩn theo 4 tầng
 

@@ -1,184 +1,104 @@
 import os
 import sys
+import re
 from docx import Document
 from docx.shared import Pt, Cm, RGBColor
 from docx.enum.text import WD_ALIGN_PARAGRAPH
-from docx.oxml import OxmlElement
-from docx.oxml.ns import qn
+from bs4 import BeautifulSoup
+import markdown
 
-def set_cell_margins(cell, top=100, bottom=100, left=150, right=150):
-    """Thiết lập khoảng đệm (padding) chuẩn cho ô trong bảng Word."""
-    tc = cell._tc
-    tcPr = tc.get_or_add_tcPr()
-    tcMar = OxmlElement('w:tcMar')
-    for margin_name, val in [('top', top), ('bottom', bottom), ('left', left), ('right', right)]:
-        node = OxmlElement(f'w:{margin_name}')
-        node.set(qn('w:w'), str(val))
-        node.set(qn('w:type'), 'dxa')
-        tcMar.append(node)
-    tcPr.append(tcMar)
+def clean_latex_and_text(text):
+    """Xóa mã LaTeX thô và chuyển thành ký hiệu Unicode học thuật chuẩn"""
+    mapping = {
+        r'$\beta$': 'β', r'$p$': 'p', r'$t$': 't', r'$R^2$': 'R²', r'$f^2$': 'f²',
+        r'$\alpha$': 'α', r'$\rho$': 'ρ', r'$\rightarrow$': '→', r'$\times$': 'x',
+        r'$N$': 'N', r'$100\%$': '100%', r'$\le$': '≤', r'$\ge$': '≥',
+        r'\beta': 'β', r'\rightarrow': '→', r'\times': 'x', r'\alpha': 'α'
+    }
+    for k, v in mapping.items():
+        text = text.replace(k, v)
+    # Xóa các dấu $ còn sót lại của thẻ math
+    text = text.replace('$', '')
+    return text.strip()
 
-def add_formatted_paragraph(doc, element, style='Normal', is_list_item=False):
-    """Thêm đoạn văn bản giữ nguyên in đậm (strong/b) và in nghiêng (em/i)."""
-    p = doc.add_paragraph(style=style)
-    p.paragraph_format.line_spacing = 1.5
-    if not is_list_item:
-        p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-
-    for child in element.children:
-        if hasattr(child, 'name') and child.name:
-            if child.name in ['strong', 'b']:
-                run = p.add_run(child.get_text())
-                run.font.name = 'Times New Roman'
-                run.font.size = Pt(13)
-                run.font.bold = True
-                run.font.color.rgb = RGBColor(0, 0, 0)
-            elif child.name in ['em', 'i']:
-                run = p.add_run(child.get_text())
-                run.font.name = 'Times New Roman'
-                run.font.size = Pt(13)
-                run.font.italic = True
-                run.font.color.rgb = RGBColor(0, 0, 0)
-            elif child.name == 'code':
-                run = p.add_run(child.get_text())
-                run.font.name = 'Courier New'
-                run.font.size = Pt(11)
-            else:
-                run = p.add_run(child.get_text())
-                run.font.name = 'Times New Roman'
-                run.font.size = Pt(13)
-                run.font.color.rgb = RGBColor(0, 0, 0)
-        else:
-            text = str(child)
-            run = p.add_run(text)
-            run.font.name = 'Times New Roman'
-            run.font.size = Pt(13)
-            run.font.color.rgb = RGBColor(0, 0, 0)
-    return p
-
-def create_neu_standard_doc(input_folder="drafts", output_file="BaoCaoTongKet.docx"):
-    """
-    Quét tất cả file .md trong thư mục input_folder, ghép lại và xuất ra file Word (.docx)
-    theo chuẩn định dạng NEU: Times New Roman 13pt, Giãn dòng 1.5 lines,
-    Căn lề: Trên 2.5cm, Dưới 2.5cm, Trái 3.5cm, Phải 2.0cm, đầy đủ bảng biểu và danh sách.
-    """
-    try:
-        import markdown
-        from bs4 import BeautifulSoup
-    except ImportError:
-        print("Vui lòng cài đặt thư viện hỗ trợ: pip install python-docx markdown beautifulsoup4")
-        return
-
-    if not os.path.exists(input_folder):
-        os.makedirs(input_folder, exist_ok=True)
-        print(f"Đã tự động khởi tạo thư mục '{input_folder}'. Hãy đặt các file .md bản thảo vào đây.")
-        return
-
+def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
     doc = Document()
     
-    # Thiết lập căn lề chuẩn NEU cho tất cả sections
+    # 1. Cấu hình Margins chuẩn (Trái 3.5cm, Phải/Trên/Dưới 2cm-2.5cm)
     for section in doc.sections:
         section.top_margin = Cm(2.5)
         section.bottom_margin = Cm(2.5)
         section.left_margin = Cm(3.5)
         section.right_margin = Cm(2.0)
 
-    # Thiết lập Font chữ mặc định Normal
+    # 2. Cấu hình Font và Spacing mặc định
     style = doc.styles['Normal']
     font = style.font
     font.name = 'Times New Roman'
     font.size = Pt(13)
-    font.color.rgb = RGBColor(0, 0, 0)
-    
-    paragraph_format = style.paragraph_format
-    paragraph_format.line_spacing = 1.5
-    paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
+    style.paragraph_format.line_spacing = 1.5
+    style.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
 
-    md_files = sorted([f for f in os.listdir(input_folder) if f.endswith('.md')])
-    if not md_files:
-        print(f"Không tìm thấy file .md nào trong thư mục '{input_folder}'. Hãy đặt các file chương/tiểu mục vào đây.")
+    if not os.path.exists(input_folder):
+        print(f"Không tìm thấy thư mục {input_folder}")
         return
 
-    for idx, md_file in enumerate(md_files):
-        file_path = os.path.join(input_folder, md_file)
-        with open(file_path, 'r', encoding='utf-8') as f:
-            md_text = f.read()
-
-        # Bật extensions tables và fenced_code để phân tích bảng biểu Markdown
-        html = markdown.markdown(md_text, extensions=['tables', 'fenced_code'])
-        soup = BeautifulSoup(html, 'html.parser')
-        
-        for element in soup.find_all(['h1', 'h2', 'h3', 'h4', 'p', 'ul', 'ol', 'table', 'blockquote']):
-            # Tiêu đề các cấp
-            if element.name in ['h1', 'h2', 'h3', 'h4']:
-                level = int(element.name[1])
-                h = doc.add_heading(element.get_text(), level=level)
-                h.paragraph_format.line_spacing = 1.5
-                for r in h.runs:
-                    r.font.name = 'Times New Roman'
-                    r.font.color.rgb = RGBColor(0, 0, 0)
-                    r.font.bold = True
-                    if level == 1:
-                        r.font.size = Pt(16)
-                    elif level == 2:
-                        r.font.size = Pt(14)
-                    else:
-                        r.font.size = Pt(13)
-
-            # Đoạn văn bản thông thường (hỗ trợ in đậm, in nghiêng)
-            elif element.name == 'p':
-                add_formatted_paragraph(doc, element, style='Normal')
-
-            # Danh sách không thứ tự (Bullet points)
-            elif element.name == 'ul':
-                for li in element.find_all('li', recursive=False):
-                    add_formatted_paragraph(doc, li, style='List Bullet', is_list_item=True)
-
-            # Danh sách có thứ tự (Numbered list 1., 2., 3.)
-            elif element.name == 'ol':
-                for li in element.find_all('li', recursive=False):
-                    add_formatted_paragraph(doc, li, style='List Number', is_list_item=True)
-
-            # Khối trích dẫn (Blockquote)
-            elif element.name == 'blockquote':
-                for p_child in element.find_all('p'):
-                    p = add_formatted_paragraph(doc, p_child, style='Normal')
-                    p.paragraph_format.left_indent = Cm(1.0)
-                    for r in p.runs:
-                        r.font.italic = True
-
-            # BẢNG BIỂU HỌC THUẬT (TABLES)
-            elif element.name == 'table':
-                rows = element.find_all('tr')
-                if rows:
-                    cols_count = max(len(row.find_all(['th', 'td'])) for row in rows)
-                    table = doc.add_table(rows=len(rows), cols=cols_count)
+    md_files = sorted([f for f in os.listdir(input_folder) if f.endswith('.md') and not f.startswith('test-')])
+    
+    for md_file in md_files:
+        with open(os.path.join(input_folder, md_file), 'r', encoding='utf-8') as f:
+            html = markdown.markdown(f.read(), extensions=['tables'])
+            soup = BeautifulSoup(html, 'html.parser')
+            
+            for element in soup:
+                if element.name in ['h1', 'h2', 'h3', 'h4']:
+                    level = int(element.name[1])
+                    heading = doc.add_heading(clean_latex_and_text(element.text), level=level)
+                    for run in heading.runs:
+                        run.font.name = 'Times New Roman'
+                        run.font.color.rgb = RGBColor(0, 0, 0) # Khóa màu đen, không dùng màu xanh mặc định
+                        if level == 1: run.font.size = Pt(16)
+                        elif level == 2: run.font.size = Pt(14)
+                        else: run.font.size = Pt(13)
+                
+                elif element.name == 'p':
+                    doc.add_paragraph(clean_latex_and_text(element.text))
+                
+                elif element.name == 'ul':
+                    # Đổi dấu chấm khổng lồ thành gạch ngang chuẩn văn bản hành chính/khoa học Việt Nam
+                    for li in element.find_all('li'):
+                        p = doc.add_paragraph(f"- {clean_latex_and_text(li.text)}")
+                        p.paragraph_format.left_indent = Cm(1.27)
+                        p.paragraph_format.first_line_indent = Cm(-0.63)
+                
+                elif element.name == 'ol':
+                    for i, li in enumerate(element.find_all('li'), 1):
+                        p = doc.add_paragraph(f"{i}. {clean_latex_and_text(li.text)}")
+                        p.paragraph_format.left_indent = Cm(1.27)
+                        p.paragraph_format.first_line_indent = Cm(-0.63)
+                
+                elif element.name == 'table':
+                    rows = element.find_all('tr')
+                    if not rows: continue
+                    cols = max(len(r.find_all(['th', 'td'])) for r in rows)
+                    table = doc.add_table(rows=len(rows), cols=cols)
                     table.style = 'Table Grid'
-                    
                     for r_idx, row in enumerate(rows):
                         cells = row.find_all(['th', 'td'])
                         for c_idx, cell in enumerate(cells):
-                            doc_cell = table.cell(r_idx, c_idx)
-                            doc_cell.text = cell.get_text().strip()
-                            set_cell_margins(doc_cell, top=80, bottom=80, left=120, right=120)
-                            for p in doc_cell.paragraphs:
-                                p.paragraph_format.line_spacing = 1.0
-                                p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER if (r_idx == 0 or cell.name == 'th') else WD_ALIGN_PARAGRAPH.LEFT
-                                for r in p.runs:
-                                    r.font.name = 'Times New Roman'
-                                    r.font.size = Pt(11)
-                                    if cell.name == 'th' or r_idx == 0:
-                                        r.font.bold = True
-                    # Thêm khoảng đệm nhỏ sau bảng
-                    doc.add_paragraph()
-
-        # Ngắt trang giữa các file chương (ngoại trừ file cuối cùng)
-        if idx < len(md_files) - 1:
+                            tc = table.cell(r_idx, c_idx)
+                            tc.text = clean_latex_and_text(cell.text)
+                            # In đậm Header bảng
+                            if cell.name == 'th':
+                                for paragraph in tc.paragraphs:
+                                    for run in paragraph.runs:
+                                        run.font.bold = True
+                                        
             doc.add_page_break()
 
     doc.save(output_file)
-    print(f"Đã xuất thành công báo cáo toàn văn chuẩn NEU (có bảng biểu & danh sách) ra file: {output_file}")
+    print(f"Đã xuất thành công báo cáo chuẩn NEU ra file: {output_file}")
 
 if __name__ == "__main__":
-    folder = sys.argv[1] if len(sys.argv) > 1 else "drafts"
-    create_neu_standard_doc(folder)
+    draft_dir = sys.argv[1] if len(sys.argv) > 1 else "drafts"
+    create_neu_standard_doc(draft_dir)

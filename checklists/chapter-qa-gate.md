@@ -27,3 +27,4 @@ Trước khi trả bản thảo cho thành viên (hoặc chốt chỉnh sửa tr
   - 1 tác giả: `(Thaler, 1999)` hoặc `Thaler (1999)`
   - 2 tác giả: `(Lusardi & Mitchell, 2014)` hoặc `Lusardi và Mitchell (2014)`
   - 3 tác giả trở lên: `(Ashby et al., 2025)` hoặc `Ashby và cộng sự (2025)` (thống nhất duy nhất một dạng xuyên suốt cả bài).
+- [ ] **11. Cấm tuyệt đối gạch đầu dòng & Đồ thị ASCII:** Cấm sử dụng dấu gạch đầu dòng (-) hoặc chấm tròn (•) để liệt kê ý. Mọi ý phải viết thành đoạn văn hoàn chỉnh, thụt đầu dòng, dùng từ nối 'Thứ nhất, Thứ hai...'. Cấm vẽ đồ thị bằng chữ (ASCII Art), chỉ ghi `[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]`.

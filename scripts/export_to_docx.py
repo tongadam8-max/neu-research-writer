@@ -17,8 +17,8 @@ def clean_latex_and_text(text):
     for k, v in mapping.items():
         text = text.replace(k, v)
     text = text.replace('$', '')
-    # Xóa các dấu gạch ngang đầu dòng nếu AI lỡ sinh ra
-    text = re.sub(r'^\s*-\s*', '', text) 
+    # Tự động loại bỏ mọi dấu gạch ngang, chấm tròn hoặc số thứ tự ở đầu dòng do AI sinh ra
+    text = re.sub(r'^\s*[-•\d\.]+\s*', '', text) 
     return text.strip()
 
 def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
@@ -36,8 +36,6 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
     font.size = Pt(13)
     style.paragraph_format.line_spacing = 1.5
     style.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.JUSTIFY
-    # FORCE THỤT LỀ DÒNG ĐẦU (1.27cm) CHO MỌI ĐOẠN VĂN
-    style.paragraph_format.first_line_indent = Cm(1.27) 
 
     if not os.path.exists(input_folder):
         print(f"Không tìm thấy thư mục {input_folder}")
@@ -48,9 +46,10 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
     for md_file in md_files:
         with open(os.path.join(input_folder, md_file), 'r', encoding='utf-8') as f:
             content = f.read()
-            # Bẫy xóa đồ thị ASCII (nhận diện các dòng có nhiều ký tự -, /, | xếp chồng)
-            if re.search(r'(\|.*\|.*\|.*\n)+', content) is None: # Né bảng thật
-                content = re.sub(r'(-{5,}|/{3,}|\|[\s\w]+\|.*?\n){2,}', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content)
+            
+            # CÀN QUÉT ĐỒ THỊ ASCII: Bắt các khối code hoặc các dòng chứa nhiều ký tự vẽ hình
+            content = re.sub(r'```.*?```', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content, flags=re.DOTALL)
+            content = re.sub(r'(?:[ /\|+-]{3,}\n){2,}', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content)
 
             html = markdown.markdown(content, extensions=['tables'])
             soup = BeautifulSoup(html, 'html.parser')
@@ -65,16 +64,31 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                         if level == 1: run.font.size = Pt(16)
                         elif level == 2: run.font.size = Pt(14)
                         else: run.font.size = Pt(13)
-                    # Hủy thụt lề cho Tiêu đề
                     heading.paragraph_format.first_line_indent = Cm(0)
                 
-                elif element.name == 'p':
-                    doc.add_paragraph(clean_latex_and_text(element.text))
-                
-                elif element.name in ['ul', 'ol']:
-                    # XÉ TOẠC LIST: Biến mỗi thẻ <li> thành một đoạn văn (paragraph) thụt lề bình thường
-                    for li in element.find_all('li'):
-                        doc.add_paragraph(clean_latex_and_text(li.text))
+                elif element.name in ['p', 'ul', 'ol']:
+                    # ÉP CHẺ DÒNG (HARD RETURN) ĐỂ CHỐNG KÉO GIÃN CHỮ VÀ CHUẨN HÓA LIST
+                    raw_lines = []
+                    if element.name in ['ul', 'ol']:
+                        for li in element.find_all('li'):
+                            raw_lines.extend(clean_latex_and_text(li.text).split('\n'))
+                    else:
+                        raw_lines = clean_latex_and_text(element.text).split('\n')
+
+                    for line in raw_lines:
+                        line = line.strip()
+                        if not line: continue
+                        
+                        if "CHÈN HÌNH ẢNH ĐỒ THỊ" in line:
+                            p = doc.add_paragraph("[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]")
+                            p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                            p.paragraph_format.first_line_indent = Cm(0)
+                            for run in p.runs:
+                                run.font.italic = True
+                                run.font.color.rgb = RGBColor(0, 0, 255)
+                        else:
+                            p = doc.add_paragraph(line)
+                            p.paragraph_format.first_line_indent = Cm(1.27)
                 
                 elif element.name == 'table':
                     rows = element.find_all('tr')
@@ -87,7 +101,6 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                         for c_idx, cell in enumerate(cells):
                             tc = table.cell(r_idx, c_idx)
                             tc.text = clean_latex_and_text(cell.text)
-                            # Hủy thụt lề bên trong bảng
                             for paragraph in tc.paragraphs:
                                 paragraph.paragraph_format.first_line_indent = Cm(0)
                             if cell.name == 'th':

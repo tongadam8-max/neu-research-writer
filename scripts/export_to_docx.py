@@ -8,27 +8,34 @@ from bs4 import BeautifulSoup
 import markdown
 
 def clean_latex_and_text(text):
-    # 1. Chuyển đổi mã LaTeX toán học
     mapping = {
         r'$\beta$': 'β', r'$p$': 'p', r'$t$': 't', r'$R^2$': 'R²', r'$f^2$': 'f²',
         r'$\alpha$': 'α', r'$\rho$': 'ρ', r'$\rightarrow$': '→', r'$\times$': 'x',
         r'$N$': 'N', r'$100\%$': '100%', r'$\le$': '≤', r'$\ge$': '≥',
         r'\beta': 'β', r'\rightarrow': '→', r'\times': 'x', r'\alpha': 'α',
-        # Thay thế gạch ngang dài thành gạch ngắn
         '—': '-'
     }
     for k, v in mapping.items():
         text = text.replace(k, v)
     text = text.replace('$', '')
     
-    # 2. Xóa gạch đầu dòng/chấm tròn/số thứ tự do AI lỡ sinh ra ở đầu dòng
+    # 2. Xóa gạch đầu dòng/chấm tròn/số thứ tự do AI lỡ sinh ra
     text = re.sub(r'^\s*[-•\d\.]+\s*', '', text)
     
-    # 3. Ép chuẩn Smart Quotes (Dấu ngoặc kép uốn cong “...”)
-    # Thay thế dấu ngoặc kép thẳng "..." thành “...”
+    # 3. Ép chuẩn Smart Quotes
     text = re.sub(r'"([^"]*)"', r'“\1”', text)
-    # Thay thế dấu nháy đơn '...' (nếu nó bọc một cụm từ) thành “...”
     text = re.sub(r"(^|\s)'([^']*)'(?=\s|[.,;:!?]|$)", r'\1“\2”', text)
+
+    # 4. BỘ LỌC CỞI TRÓI NGOẶC KÉP CHO THUẬT NGỮ VÀ ẨN DỤ
+    # Tháo ngoặc kép đối với các cụm từ ngắn (dưới 7 từ) để xóa dấu vết AI
+    def unquote_short_phrases(match):
+        content = match.group(1)
+        word_count = len(content.split())
+        if word_count <= 6:
+            return content  # Trả về nội dung không có ngoặc
+        return match.group(0) # Giữ nguyên ngoặc nếu là câu dài
+
+    text = re.sub(r'“([^”]+)”', unquote_short_phrases, text)
 
     return text.strip()
 
@@ -78,7 +85,6 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                     heading.paragraph_format.first_line_indent = Cm(0)
                 
                 elif element.name in ['p', 'ul', 'ol']:
-                    # ÉP CHẺ DÒNG (HARD RETURN)
                     raw_lines = []
                     if element.name in ['ul', 'ol']:
                         for li in element.find_all('li'):

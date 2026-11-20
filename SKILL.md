@@ -29,12 +29,17 @@ Load only the reference files required for the user's current target section to 
 
 | Target Section Requested | Primary Reference File(s) to Load |
 | :--- | :--- |
+| Dựng Outline / Cấu trúc Báo cáo toàn văn | `references/00-outline-architect.md` |
 | Opening / Introduction / Research Gaps | `references/01-intro-and-gap.md` |
 | Literature Review / Concepts / Theory / Hypotheses | `references/02-literature-and-hypotheses.md` |
 | Methodology / Scales / Sampling / Data Analysis | `references/03-methodology.md` + `references/methods/survey-sem-guide.md` |
 | Empirical Results / Model Testing | `references/04-results-and-discussion.md` + `references/methods/survey-sem-guide.md` |
 | Discussion of Findings | `references/04-results-and-discussion.md` |
 | Policy & Managerial Implications / Limitations / Conclusion | `references/05-implications-and-conclusion.md` |
+| Lập Ma trận & Trích xuất Tóm tắt Bài báo | `references/06-literature-matrix-extractor.md` |
+| Rà soát Trích dẫn & Phụ lục | `references/07-citations-and-appendices.md` |
+| Ghép file, Giảm Turnitin & Paraphrase | `references/08-merge-and-paraphrase.md` |
+| Ôn tập & Giả lập Hội đồng Bảo vệ | `references/09-defense-and-viva-prep.md` |
 | Review / Edit / Merge Chapters | `checklists/chapter-qa-gate.md` |
 
 ## Governance Hierarchy: Strict Standards vs. Adaptive Freedom

@@ -41,7 +41,7 @@ Load only the reference files required for the user's current target section to 
 | Rà soát Trích dẫn & Phụ lục | `references/07-citations-and-appendices.md` |
 | Ghép file, Giảm Turnitin & Paraphrase | `references/08-merge-and-paraphrase.md` |
 | Ôn tập & Giả lập Hội đồng Bảo vệ | `references/09-defense-and-viva-prep.md` |
-| Xuất Báo cáo toàn văn sang Word (.docx chuẩn NEU) | Chạy script `python scripts/export_to_docx.py [drafts]` |
+| Xuất Báo cáo toàn văn ra Word (.docx chuẩn NEU) | Thực thi `python scripts/export_to_docx.py <thư mục drafts>` |
 | Review / Edit / Merge Chapters | `checklists/chapter-qa-gate.md` |
 
 ## Governance Hierarchy: Strict Standards vs. Adaptive Freedom

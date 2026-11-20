@@ -1,0 +1,2 @@
+# Thư mục chứa các file bản thảo Markdown (.md) theo từng chương
+# Script scripts/export_to_docx.py sẽ quét thư mục này để ghép thành file Word (.docx) chuẩn NEU

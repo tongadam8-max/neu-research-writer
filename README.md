@@ -14,16 +14,25 @@ Kho lưu trữ bộ kỹ năng chuẩn hóa quy trình viết toàn văn báo c�
 neu-research-writer/
 ├── README.md                              # Tài liệu hướng dẫn này
 ├── SKILL.md                               # File điều phối lõi (luật văn phong, chống bịa nguồn, định tuyến)
+├── drafts/                                # Thư mục chứa các file bản thảo .md để xuất Word
+│   └── .gitkeep
+├── scripts/
+│   └── export_to_docx.py                  # Script Python tự động ghép và xuất bản thảo ra .docx chuẩn NEU
 ├── references/
+│   ├── 00-outline-architect.md            # Kiến trúc sư dựng Outline báo cáo toàn văn (4 hoặc 5 chương)
 │   ├── 01-intro-and-gap.md                # Viết Phần Mở đầu & Ma trận khoảng trống 4 tầng
 │   ├── 02-literature-and-hypotheses.md    # Viết Tổng quan 2 chiều, Lý thuyết nền & Giả thuyết
 │   ├── 03-methodology.md                  # Viết Phương pháp, Thang đo, Pilot & Làm sạch dữ liệu
 │   ├── 04-results-and-discussion.md       # Viết Kết quả thực nghiệm & Thảo luận 2 nhánh
 │   ├── 05-implications-and-conclusion.md  # Viết Khuyến nghị neo số liệu, Hạn chế & Kết luận
+│   ├── 06-literature-matrix-extractor.md  # Trích xuất và lập ma trận tổng quan bài báo mới
+│   ├── 07-citations-and-appendices.md     # Chuẩn hóa trích dẫn APA 7th & hệ thống Phụ lục NEU
+│   ├── 08-merge-and-paraphrase.md         # Hợp nhất liên chương, chuyển ý & khử trùng lặp Turnitin
+│   ├── 09-defense-and-viva-prep.md        # Giả lập phản biện hội đồng & ôn luyện bảo vệ
 │   └── methods/
 │       └── survey-sem-guide.md            # Bộ ngưỡng thống kê & mẫu bảng PLS-SEM / CB-SEM
 ├── checklists/
-│   └── chapter-qa-gate.md                 # Bộ lọc tự kiểm tra 10 điểm trước khi xuất bản thảo
+│   └── chapter-qa-gate.md                 # Bộ lọc tự kiểm định 2 vòng (Pass 1 & Pass 2)
 └── templates/
     ├── project-context.md                 # File cấu hình dùng chung của nhóm (điền 1 lần/đề tài)
     └── chapter-handoff.md                 # Phiếu bàn giao kết quả giữa các thành viên viết chương

@@ -6,14 +6,16 @@
 
 ## 1. Trạng thái tiến độ các chương
 
+*(Lưu ý: Danh số chương bên dưới tự động điều chỉnh theo đúng Outline 4 chương hoặc 5 chương đã khai báo trong `project-context.md`)*
+
 | Chương / Phần | Người phụ trách | Trạng thái (`Đang viết` / `Đã xong` / `Đã duyệt`) | Ghi chú chính |
 | :--- | :--- | :--- | :--- |
-| Phần Mở đầu | [...] | [...] | [...] |
-| Chương 1 (Lý thuyết & Tổng quan) | [...] | [...] | [...] |
-| Chương 2 (Phương pháp) | [...] | [...] | [...] |
-| Chương 3 (Kết quả) | [...] | [...] | [...] |
-| Chương 4 (Thảo luận & Khuyến nghị) | [...] | [...] | [...] |
-| Phần Kết luận | [...] | [...] | [...] |
+| Phần Mở đầu / Chương 1 (Giới thiệu) | [...] | [...] | [...] |
+| Chương 1 / Chương 2 (Cơ sở lý thuyết & Tổng quan) | [...] | [...] | [...] |
+| Chương 2 / Chương 3 (Phương pháp nghiên cứu) | [...] | [...] | [...] |
+| Chương 3 / Chương 4 (Kết quả nghiên cứu) | [...] | [...] | [...] |
+| Chương 4 / Chương 5 (Thảo luận & Khuyến nghị) | [...] | [...] | [...] |
+| Phần Kết luận (hoặc Chương 5 Kết luận) | [...] | [...] | [...] |
 
 ---
 

@@ -4,7 +4,7 @@
 
 ## 1. Kỹ thuật Hợp nhất & Chuyển ý (Transition)
 - Đọc file `chapter-handoff.md` để nắm được ý cuối của Chương trước.
-- Mở đầu Chương sau bằng một câu chốt nối tiếp (Ví dụ: *"Trên cơ sở mô hình đã được xác lập ở Chương 2, Chương 3 tiến hành..."*).
+- Mở đầu Chương sau bằng một câu chốt nối tiếp (Ví dụ: *"Trên cơ sở mô hình và khung phương pháp đã được xác lập ở chương trước, chương này tiến hành trình bày kết quả kiểm định thực nghiệm..."*).
 
 ## 2. Kỹ thuật Khử trùng lặp (Academic Paraphrasing)
 Khi được yêu cầu viết lại (paraphrase) để giảm Turnitin:

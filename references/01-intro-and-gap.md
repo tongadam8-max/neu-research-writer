@@ -29,7 +29,7 @@ Tuyệt đối không viết chung chung theo kiểu cảm tính. Triển khai t
 
 ## 3. Công thức Ma trận Khoảng trống nghiên cứu 4 tầng (4-Layer Gap Matrix)
 
-Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đầu hoặc cuối phần Tổng quan Chương 1), không liệt kê vụn vặt mà hệ thống hóa theo tối đa 4 tầng học thuật (chọn đúng các tầng khớp với đề tài trong `project-context.md`):
+Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đầu hoặc cuối phần Tổng quan nghiên cứu), không liệt kê vụn vặt mà hệ thống hóa theo tối đa 4 tầng học thuật (chọn đúng các tầng khớp với đề tài trong `project-context.md`):
 
 1. **Khoảng trống về cách đo lường / Khía cạnh của biến:** Các nghiên cứu trước mới tiếp cận đơn chiều, hoặc chỉ giới hạn trên một nền tảng/biểu hiện đơn lẻ mà chưa đo lường toàn diện cấu trúc biến.
 2. **Khoảng trống về khung lý thuyết nền:** Các nghiên cứu trước dựa trên khung lý thuyết cũ/chưa đủ độ bao phủ; đề tài tích hợp hoặc mở rộng lý thuyết nền phù hợp hơn với bản chất hành vi.

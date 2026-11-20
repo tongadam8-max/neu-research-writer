@@ -66,3 +66,7 @@ Tài liệu tham chiếu kỹ thuật dùng khi viết **Chương Phương pháp
    - $CMIN/df \le 3$ (tốt $\le 2$); $CFI \ge 0,90$; $TLI \ge 0,90$; $GFI \ge 0,80$ (tốt $\ge 0,90$); $RMSEA \le 0,06$ (chấp nhận $\le 0,08$); $Pclose > 0,05$.
    - Giá trị hội tụ & phân biệt: $CR \ge 0,70$; $AVE \ge 0,50$; $MSV < AVE$; $\sqrt{AVE} >$ tương quan giữa các cặp biến tiềm ẩn.
 5. **Kiểm định Trung gian (Bootstrapping 5.000 mẫu trên AMOS):** Báo cáo riêng Bảng tác động trực tiếp (Direct), gián tiếp (Indirect) và tổng hợp (Total) kèm mức ý nghĩa $p$-value để kết luận trung gian toàn phần hay một phần.
+
+### B2. Quy tắc đối với Biến kiểm soát đơn mục trong CB-SEM (SPSS + AMOS)
+- **Trong Cronbach's Alpha & EFA/CFA:** Tuyệt đối KHÔNG đưa các biến kiểm soát đơn mục (như Giới tính, Độ tuổi, Thu nhập đơn mục) vào phân tích độ tin cậy Alpha hay mô hình đo lường EFA/CFA, vì chúng là biến quan sát trực tiếp, không phải biến tiềm ẩn đa chỉ báo (multi-item latent construct).
+- **Trong Mô hình cấu trúc SEM (AMOS):** Biến kiểm soát đơn mục được đưa thẳng vào sơ đồ SEM dưới dạng biến quan sát (hình chữ nhật) có đường dẫn hồi quy trực tiếp trỏ vào biến phụ thuộc. Báo cáo hệ số chuẩn hóa ($\beta$), sai số chuẩn ($S.E.$), giá trị $C.R.$ và $p$-value tương ứng để chứng minh tính vững của mô hình chính khi kiểm soát biến gây nhiễu.

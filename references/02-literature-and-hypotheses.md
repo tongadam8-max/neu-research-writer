@@ -17,7 +17,7 @@
   2. Gom nhóm các tác giả cùng quan điểm trong cùng một mệnh đề trích dẫn, ví dụ: `(Tác giả A, 2022; Tác giả B & cộng sự, 2024)`.
   3. Chọn 1-2 công trình tiêu biểu nhất để phân tích sâu bối cảnh mẫu, phương pháp và phát hiện cụ thể.
   4. **Làm nổi bật tranh luận / mâu thuẫn học thuật** (nếu có): Dùng các từ nối học thuật sắc bén (*"Tuy nhiên, trái ngược với dòng nghiên cứu trên..."*, *"Nghịch lý thực nghiệm này gợi mở rằng..."*) để tạo tiền đề tự nhiên cho mô hình của nhóm.
-- **Bắt buộc có đoạn Tiểu kết (Synthesis):** Cuối mỗi hướng nghiên cứu lớn, viết 1 đoạn ngắn (3-4 câu) tóm tắt những điểm đã thống nhất và điểm còn bỏ ngỏ, dẫn mạch sang mục **Đánh giá chung và Khoảng trống nghiên cứu** (tham chiếu Ma trận 4 tầng tại `01-intro-and-gap.md`).
+- **Đoạn Tiểu kết (Synthesis):** Cuối mỗi hướng nghiên cứu lớn, viết 1 đoạn ngắn (3-4 câu) tóm tắt những điểm đã thống nhất và điểm còn bỏ ngỏ, dẫn mạch sang mục **Đánh giá chung và Khoảng trống nghiên cứu** (tham chiếu Ma trận 4 tầng tại `01-intro-and-gap.md`).
 
 ---
 

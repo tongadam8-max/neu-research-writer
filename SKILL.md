@@ -13,6 +13,7 @@ Write cohesive, publication-grade Vietnamese academic chapters for full-text res
 - Expanding structured full-report subsections into complete academic prose for university or faculty-level research awards.
 - Converting live statistical outputs (SPSS, SmartPLS, AMOS) into formatted academic tables and analytical prose.
 - Auditing drafted chapters for cross-chapter consistency, statistical accuracy, presentation quality, and APA 7th formatting.
+- Compiling chapter drafts and exporting publication-grade Word reports (.docx) using NEU formatting standards.
 
 ## Pre-Flight Protocol & Smart Clarification (Before Writing)
 
@@ -40,6 +41,7 @@ Load only the reference files required for the user's current target section to 
 | Rà soát Trích dẫn & Phụ lục | `references/07-citations-and-appendices.md` |
 | Ghép file, Giảm Turnitin & Paraphrase | `references/08-merge-and-paraphrase.md` |
 | Ôn tập & Giả lập Hội đồng Bảo vệ | `references/09-defense-and-viva-prep.md` |
+| Xuất Báo cáo toàn văn sang Word (.docx chuẩn NEU) | Chạy script `python scripts/export_to_docx.py [drafts]` |
 | Review / Edit / Merge Chapters | `checklists/chapter-qa-gate.md` |
 
 ## Governance Hierarchy: Strict Standards vs. Adaptive Freedom

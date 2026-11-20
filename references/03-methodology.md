@@ -26,8 +26,8 @@ Trình bày rõ tổng số câu hỏi và phân chia thành từng phần logic
 5. Các biến quan sát thuộc các biến tiềm ẩn chính đo bằng thang đo Likert (nêu rõ số bậc, ví dụ Likert 5 mức độ từ `1 = Hoàn toàn không đồng ý` đến `5 = Hoàn toàn đồng ý`).
 6. Cơ chế kiểm soát chất lượng câu trả lời (câu hỏi kiểm tra mức độ chú ý - attention check, hoặc câu hỏi ngược - reverse-coded items).
 
-### 2.2. Bảng Thang đo tổng hợp (Chuẩn 3 cột bắt buộc)
-Trình bày bảng tổng hợp toàn bộ biến quan sát cho từng biến tiềm ẩn. Mọi thang đo kế thừa phải ghi rõ tác giả gốc và mức độ hiệu chỉnh ngôn ngữ cho bối cảnh Việt Nam:
+### 2.2. Bảng Thang đo tổng hợp (Khuôn mẫu 3 cột chuẩn)
+Trình bày bảng tổng hợp toàn bộ biến quan sát cho từng biến tiềm ẩn (linh hoạt bổ sung thêm cột nếu đề tài có yêu cầu đo lường đặc thù). Mọi thang đo kế thừa nên ghi rõ tác giả gốc và mức độ hiệu chỉnh ngôn ngữ cho bối cảnh Việt Nam:
 
 | Mã hóa | Nội dung biến quan sát | Nguồn kế thừa |
 | :--- | :--- | :--- |

@@ -3,8 +3,9 @@
 Áp dụng module này khi viết **Chương Kết quả nghiên cứu** và **Mục Thảo luận kết quả**.
 
 > **Kiểm tra chế độ bố cục trong `project-context.md` trước khi viết:**
-> - **Chế độ Tách riêng (4 chương):** Chương 3 tập trung **báo cáo kết quả thực nghiệm thuần túy** (bảng biểu, kiểm định giả thuyết, đồ thị, diễn giải ngắn gọn ý nghĩa thống kê); phần **Thảo luận đối chiếu nghiên cứu trước** viết sâu ở Mục 4.1 của Chương 4.
-> - **Chế độ Gộp chung (5 chương):** Viết kết quả kiểm định giả thuyết gắn liền ngay với phần thảo luận đối chiếu nghiên cứu trước trong cùng chương.
+> - **Bố cục báo cáo (4 chương hay 5 chương):** Tuân thủ tuyệt đối danh số và tên chương trong Outline tại Mục 3 của `project-context.md` (không gắn cứng số chương mặc định).
+> - **Chế độ Tách riêng:** Chương/Mục Kết quả tập trung **báo cáo kết quả thực nghiệm thuần túy** (bảng biểu, kiểm định giả thuyết, đồ thị, diễn giải ngắn gọn ý nghĩa thống kê); phần **Thảo luận đối chiếu nghiên cứu trước** viết sâu ở chương/mục riêng biệt tiếp theo.
+> - **Chế độ Gộp chung:** Viết kết quả kiểm định giả thuyết gắn liền ngay với phần thảo luận đối chiếu lý thuyết và nghiên cứu trước trong cùng một chương/tiểu mục.
 
 > **Yêu cầu phối hợp:** Luôn đọc kèm `references/methods/survey-sem-guide.md` để chuẩn hóa bảng biểu và cách đọc chỉ số.
 
@@ -62,8 +63,8 @@ Không lặp lại bảng số liệu ở dạng liệt kê khô khan. Với t�
 ### Nhánh 1: Giả thuyết ĐƯỢC CHẤP NHẬN (Supported)
 Triển khai theo trình tự 4 bước trong 1-2 đoạn văn sâu sắc:
 1. **Nhắc lại bằng chứng thực nghiệm:** Nêu ngắn gọn chiều tác động và hệ số ($\beta = ..., p = ...$).
-2. **Giải thích cơ chế cốt lõi (Why):** Kết nối trực tiếp về **Lý thuyết nền** ở Chương 1 để lý giải *tại sao* dữ liệu lại vận hành như vậy.
-3. **Đối chiếu học thuật:** Chỉ ra kết quả này tương đồng với các nghiên cứu quốc tế và trong nước nào đã tổng quan ở Chương 1 (chỉ trích dẫn nguồn trong kho xác thực).
+2. **Giải thích cơ chế cốt lõi (Why):** Kết nối trực tiếp về **Lý thuyết nền** (ở Chương Lý thuyết / Tổng quan) để lý giải *tại sao* dữ liệu lại vận hành như vậy.
+3. **Đối chiếu học thuật:** Chỉ ra kết quả này tương đồng với các nghiên cứu quốc tế và trong nước nào đã tổng quan ở Chương Cơ sở lý thuyết / Tổng quan (chỉ trích dẫn nguồn trong kho xác thực).
 4. **Hàm ý bối cảnh địa phương:** Lý giải ý nghĩa thực tế của phát hiện này trên đặc trưng nhóm khách thể và thị trường Việt Nam.
 
 ### Nhánh 2: Giả thuyết BỊ BÁC BỎ hoặc NGƯỢC CHIỀU KỲ VỌNG (Rejected / Counter-intuitive)

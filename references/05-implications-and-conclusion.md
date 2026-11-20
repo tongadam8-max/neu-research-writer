@@ -8,10 +8,10 @@
 
 Lỗi phổ biến nhất của bài nghiên cứu sinh viên là viết giải pháp chung chung, mang tính khẩu hiệu và không liên quan gì đến mô hình vừa kiểm định. Để triệt tiêu lỗi này, bắt buộc tuân thủ quy tắc **Neo số liệu**:
 
-### Cấu trúc bắt buộc cho MỖI nhóm chủ thể
-Chia tiểu mục theo đúng danh sách các nhóm chủ thể đã chốt trong `project-context.md` (ví dụ: *Đối với sinh viên; Đối với nhà trường; Đối với cơ quan quản lý* - hoặc *Cơ quan nhà nước; Tổ chức tín dụng; Doanh nghiệp*).
+### Cấu trúc khuyến nghị chuẩn (Phân loại theo Chủ thể hoặc Nhóm giải pháp)
+Mặc định chia tiểu mục theo danh sách các nhóm chủ thể đã chốt trong `project-context.md` (ví dụ: *Đối với sinh viên; Đối với nhà trường; Đối với cơ quan quản lý* - hoặc *Cơ quan nhà nước; Tổ chức tín dụng; Doanh nghiệp*), hoặc cấu trúc theo nhóm chính sách vĩ mô/vi mô tùy theo phong cách viết của tác giả.
 
-Mỗi tiểu mục chủ thể phải mở đầu và triển khai theo đúng 3 bước:
+Mỗi nhóm giải pháp nên mở đầu và triển khai bám sát 3 bước:
 1. **Đoạn neo thực nghiệm (1-2 câu mở đầu):** Trích dẫn trực tiếp phát hiện từ Chương Kết quả làm căn cứ hành động.
    - *Mẫu cấu trúc:* *"Từ kết quả kiểm định cho thấy [Biến X] tác động [tích cực/tiêu cực] đến [Biến Y] với hệ số $\beta = ...$, đồng thời [Biến M] đóng vai trò [điều tiết/trung gian]..., nghiên cứu đề xuất nhóm giải pháp trọng tâm đối với [Chủ thể A] như sau:"*
 2. **Triển khai 3-4 giải pháp cụ thể, có thứ tự ưu tiên:**
@@ -32,7 +32,7 @@ Phần Kết luận không đưa thêm số liệu mới hay trích dẫn mới 
 - Tóm lược rõ ràng từng phát hiện chính trả lời trực tiếp 1-1 cho `CH1`, `CH2`... đã đặt ra ở Phần Mở đầu (nêu rõ giả thuyết nào được ủng hộ, giả thuyết nào bị bác bỏ và bản chất hiệu ứng điều tiết/trung gian).
 
 ### 2.2. Đóng góp về lý luận và thực tiễn (Đối xứng với Khoảng trống Chương 1)
-- **Đóng góp về lý luận:** Đối chiếu trực tiếp lại từng khoảng trống trong Ma trận 4 tầng ở Chương 1 để khẳng định nghiên cứu đã lấp đầy được khoảng trống nào (về đo lường, về tích hợp lý thuyết nền, về giải mã mâu thuẫn thực nghiệm qua biến điều tiết/trung gian, và về bằng chứng tại thị trường mới nổi).
+- **Đóng góp về lý luận:** Đối chiếu trực tiếp lại từng khoảng trống trong Ma trận 4 tầng (đã xác lập ở Phần Mở đầu / Chương Tổng quan) để khẳng định nghiên cứu đã lấp đầy được khoảng trống nào (về đo lường, về tích hợp lý thuyết nền, về giải mã mâu thuẫn thực nghiệm qua biến điều tiết/trung gian, và về bằng chứng tại thị trường mới nổi).
 - **Đóng góp về thực tiễn:** Khái quát giá trị ứng dụng cốt lõi mà hệ thống khuyến nghị mang lại cho các nhóm chủ thể liên quan.
 
 ### 2.3. Cặp đôi Hạn chế & Hướng nghiên cứu tiếp theo (Paired Limitations & Future Directions)

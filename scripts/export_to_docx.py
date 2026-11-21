@@ -19,24 +19,18 @@ def clean_latex_and_text(text):
         text = text.replace(k, v)
     text = text.replace('$', '')
     
-    # 2. Xóa gạch đầu dòng/chấm tròn/số thứ tự do AI lỡ sinh ra
-    text = re.sub(r'^\s*[-•\d\.]+\s*', '', text)
-    
-    # 3. Ép chuẩn Smart Quotes
+    # Ép chuẩn Smart Quotes
     text = re.sub(r'"([^"]*)"', r'“\1”', text)
     text = re.sub(r"(^|\s)'([^']*)'(?=\s|[.,;:!?]|$)", r'\1“\2”', text)
 
-    # 4. BỘ LỌC CỞI TRÓI NGOẶC KÉP CHO THUẬT NGỮ VÀ ẨN DỤ
-    # Tháo ngoặc kép đối với các cụm từ ngắn (dưới 7 từ) để xóa dấu vết AI
     def unquote_short_phrases(match):
         content = match.group(1)
         word_count = len(content.split())
         if word_count <= 6:
-            return content  # Trả về nội dung không có ngoặc
-        return match.group(0) # Giữ nguyên ngoặc nếu là câu dài
+            return content
+        return match.group(0)
 
     text = re.sub(r'“([^”]+)”', unquote_short_phrases, text)
-
     return text.strip()
 
 def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
@@ -68,17 +62,33 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
         with open(os.path.join(input_folder, md_file), 'r', encoding='utf-8') as f:
             content = f.read()
             
-            # CÀN QUÉT ĐỒ THỊ ASCII
             content = re.sub(r'```.*?```', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content, flags=re.DOTALL)
             content = re.sub(r'(?:[ /\|+-]{3,}\n){2,}', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content)
 
             html = markdown.markdown(content, extensions=['tables'])
             soup = BeautifulSoup(html, 'html.parser')
             
+            is_in_reference_section = False
+            ref_counter = 1
+
             for element in soup:
                 if element.name in ['h1', 'h2', 'h3', 'h4']:
+                    raw_title = clean_latex_and_text(element.text)
+                    
+                    # Bắt tiêu đề TÀI LIỆU THAM KHẢO
+                    if "TÀI LIỆU THAM KHẢO" in raw_title.upper():
+                        is_in_reference_section = True
+                        p = doc.add_paragraph(raw_title)
+                        p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                        p.paragraph_format.first_line_indent = Cm(0)
+                        for run in p.runs:
+                            run.font.name = 'Times New Roman'
+                            run.font.bold = True
+                            run.font.size = Pt(13)
+                        continue
+                        
                     level = int(element.name[1])
-                    heading = doc.add_heading(clean_latex_and_text(element.text), level=level)
+                    heading = doc.add_heading(raw_title, level=level)
                     for run in heading.runs:
                         run.font.name = 'Times New Roman'
                         run.font.color.rgb = RGBColor(0, 0, 0)
@@ -96,7 +106,10 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                         raw_lines = clean_latex_and_text(element.text).split('\n')
 
                     for line in raw_lines:
+                        # Gỡ bỏ các số thứ tự hoặc gạch ngang cũ do AI tự sinh
+                        line = re.sub(r'^\s*[-•\d\.]+\s*', '', line)
                         line = line.strip()
+                        
                         if not line: continue
                         
                         if "CHÈN HÌNH ẢNH ĐỒ THỊ" in line:
@@ -107,8 +120,15 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                                 run.font.italic = True
                                 run.font.color.rgb = RGBColor(0, 0, 255)
                         else:
-                            p = doc.add_paragraph(line)
-                            p.paragraph_format.first_line_indent = Cm(1.27)
+                            if is_in_reference_section:
+                                # Đánh số thứ tự cho tài liệu tham khảo và thụt lề toàn bộ đoạn
+                                p = doc.add_paragraph(f"{ref_counter}. {line}")
+                                p.paragraph_format.left_indent = Cm(1.27)
+                                p.paragraph_format.first_line_indent = Cm(-1.27)
+                                ref_counter += 1
+                            else:
+                                p = doc.add_paragraph(line)
+                                p.paragraph_format.first_line_indent = Cm(1.27)
                 
                 elif element.name == 'table':
                     rows = element.find_all('tr')

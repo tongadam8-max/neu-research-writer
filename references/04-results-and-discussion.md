@@ -58,7 +58,7 @@
 
 ## PHẦN B: CÔNG THỨC THẢO LUẬN KẾT QUẢ 2 NHÁNH (CHUẨN Q1)
 
-Không lặp lại bảng số liệu ở dạng liệt kê khô khan. Với từng phát hiện cốt lõi (từng giả thuyết `H1`, `H2`, `H3`...), áp dụng đúng 1 trong 2 nhánh công thức sau:
+Không lặp lại bảng số liệu ở dạng liệt kê khô khan. Với từng phát hiện cốt lõi (từng giả thuyết `H1`, `H2`, `H3`...), áp dụng 1 trong 2 nhánh công thức cốt lõi sau (đây là khung logic nền tảng, tác giả có thể linh hoạt mở rộng lý giải sâu hơn nếu phát hiện các cơ chế đặc thù):
 
 ### Nhánh 1: Giả thuyết ĐƯỢC CHẤP NHẬN (Supported)
 Triển khai theo trình tự 4 bước trong 1-2 đoạn văn sâu sắc:

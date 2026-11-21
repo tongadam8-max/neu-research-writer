@@ -23,7 +23,7 @@ Tuyệt đối không viết chung chung theo kiểu cảm tính. Triển khai t
 1. Khái quát nhanh hướng tiếp cận chủ đạo của các nghiên cứu đi trước.
 2. Chỉ ra điểm khuyết hổng hoặc **mâu thuẫn thực nghiệm chưa ngã ngũ** trong giới học thuật (dẫn thẳng tên tác giả tiêu biểu từ Kho tài liệu xác thực).
 3. Nhấn mạnh cơ chế lý thuyết mà đề tài đưa vào để giải quyết điểm khuyết đó trên bối cảnh địa phương.
-4. **Câu chốt tên đề tài:** Kết thúc bằng đoạn chuyển dẫn tự nhiên: *"Xuất phát từ những yêu cầu thực tiễn và khoảng trống lý luận nêu trên, nhóm nghiên cứu lựa chọn thực hiện đề tài: '[Tên đề tài chính thức]'."*
+4. **Câu chốt tên đề tài:** Kết thúc bằng đoạn chuyển dẫn tự nhiên: *"Xuất phát từ những yêu cầu thực tiễn và khoảng trống lý luận nêu trên, nhóm nghiên cứu lựa chọn thực hiện đề tài: [Tên đề tài chính thức]."* (không dùng dấu ngoặc kép hoặc nháy đơn bọc quanh tên đề tài).
 
 ---
 
@@ -36,7 +36,7 @@ Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đ�
 3. **Khoảng trống về cơ chế truyền dẫn & Mâu thuẫn thực nghiệm:** Chưa làm rõ vai trò của biến trung gian (Mediation) hoặc biến điều tiết (Moderation) để giải mã vì sao các nghiên cứu đi trước cho kết quả trái ngược nhau.
 4. **Khoảng trống về bối cảnh và đối tượng đặc thù:** Phần lớn bằng chứng thực nghiệm đến từ các nền kinh tế phát triển; còn thiếu nghiên cứu định lượng chuyên sâu trên nhóm khách thể mục tiêu tại nền kinh tế đang phát triển/địa bàn cụ thể ở Việt Nam.
 
-*Quy tắc viết:* Mỗi khoảng trống triển khai thành một đoạn văn hoàn chỉnh (100-150 từ), đánh số rõ ràng (`Thứ nhất,...`, `Thứ hai,...`, `Thứ ba,...`), bắt buộc có đối chiếu tên tác giả cụ thể.
+*Quy tắc viết:* Mỗi khoảng trống triển khai thành một đoạn văn hoàn chỉnh (dung lượng gợi ý 100-150 từ hoặc linh hoạt mở rộng theo chiều sâu lập luận), dùng từ nối chuyển ý rõ ràng (`Thứ nhất,...`, `Thứ hai,...`, `Thứ ba,...`), bắt buộc có đối chiếu tên tác giả cụ thể.
 
 ---
 
@@ -44,7 +44,7 @@ Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đ�
 
 ### Mục tiêu và Câu hỏi nghiên cứu
 - **Mục tiêu tổng quát:** Gói gọn trong 01 đoạn văn gồm 2 vế: (i) Kiểm định/đánh giá mối quan hệ cốt lõi nào trên đối tượng nào, và (ii) Đề xuất hàm ý/khuyến nghị cho ai.
-- **Mục tiêu cụ thể:** Dùng gạch đầu dòng hoặc đánh số `(i), (ii), (iii), (iv)` tương ứng tuyến tính với trình tự các chương: *Hệ thống hóa lý thuyết -> Khảo sát thực trạng & đo lường tác động trực tiếp -> Kiểm định cơ chế trung gian/điều tiết -> Đề xuất khuyến nghị*.
+- **Mục tiêu cụ thể:** Triển khai thành đoạn văn hoàn chỉnh thụt dòng, đánh số bằng từ nối hoặc ký hiệu học thuật `Thứ nhất (i), Thứ hai (ii),...` (tuyệt đối không dùng dấu gạch đầu dòng để liệt kê ý) tương ứng tuyến tính với trình tự các chương: *Hệ thống hóa lý thuyết -> Khảo sát thực trạng & đo lường tác động trực tiếp -> Kiểm định cơ chế trung gian/điều tiết -> Đề xuất khuyến nghị*.
 - **Câu hỏi nghiên cứu:** Khớp 1-1 với các mục tiêu thực nghiệm và mô hình nghiên cứu; câu hỏi phải có tính phân tích ("như thế nào", "có đóng vai trò điều tiết/trung gian ra sao"), tránh câu hỏi chỉ trả lời Có/Không đơn thuần.
 
 ### Đối tượng, Khách thể và Phạm vi nghiên cứu
@@ -56,5 +56,5 @@ Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đ�
 
 ### Ý nghĩa khoa học và thực tiễn & Kết cấu báo cáo
 - **Ý nghĩa khoa học (Lý luận):** Tách rõ đóng góp về bằng chứng thực nghiệm, đóng góp về tích hợp/kiểm chứng lý thuyết và đóng góp về hiệu chỉnh thang đo trong bối cảnh địa phương.
-- **Ý nghĩa thực tiễn:** Gắn trực tiếp từng gạch đầu dòng với đúng danh sách chủ thể khuyến nghị trong `project-context.md`.
+- **Ý nghĩa thực tiễn:** Triển khai thành các đoạn văn riêng biệt gắn trực tiếp với đúng danh sách chủ thể khuyến nghị trong `project-context.md` (dùng từ nối 'Thứ nhất, Thứ hai...', không dùng dấu gạch đầu dòng).
 - **Kết cấu báo cáo:** Liệt kê chính xác tên từng chương khớp 100% với Outline báo cáo toàn văn tại Mục 3 của `project-context.md` (mỗi chương mô tả ngắn 1 câu về nội dung cốt lõi).

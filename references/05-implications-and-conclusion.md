@@ -31,7 +31,7 @@ Phần Kết luận không đưa thêm số liệu mới hay trích dẫn mới 
 - Nhắc ngắn gọn quy mô mẫu hợp lệ, phương pháp phân tích và đối tượng khảo sát.
 - Tóm lược rõ ràng từng phát hiện chính trả lời trực tiếp 1-1 cho `CH1`, `CH2`... đã đặt ra ở Phần Mở đầu (nêu rõ giả thuyết nào được ủng hộ, giả thuyết nào bị bác bỏ và bản chất hiệu ứng điều tiết/trung gian).
 
-### 2.2. Đóng góp về lý luận và thực tiễn (Đối xứng với Khoảng trống Chương 1)
+### 2.2. Đóng góp về lý luận và thực tiễn (Đối xứng với Khoảng trống tại Phần Mở đầu / Chương Tổng quan)
 - **Đóng góp về lý luận:** Đối chiếu trực tiếp lại từng khoảng trống trong Ma trận 4 tầng (đã xác lập ở Phần Mở đầu / Chương Tổng quan) để khẳng định nghiên cứu đã lấp đầy được khoảng trống nào (về đo lường, về tích hợp lý thuyết nền, về giải mã mâu thuẫn thực nghiệm qua biến điều tiết/trung gian, và về bằng chứng tại thị trường mới nổi).
 - **Đóng góp về thực tiễn:** Khái quát giá trị ứng dụng cốt lõi mà hệ thống khuyến nghị mang lại cho các nhóm chủ thể liên quan.
 

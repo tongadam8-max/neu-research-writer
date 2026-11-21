@@ -38,7 +38,7 @@ Load only the reference files required for the user's current target section to 
 | Discussion of Findings | `references/04-results-and-discussion.md` |
 | Policy & Managerial Implications / Limitations / Conclusion | `references/05-implications-and-conclusion.md` |
 | Lập Ma trận & Trích xuất Tóm tắt Bài báo | `references/06-literature-matrix-extractor.md` |
-| Rà soát Trích dẫn & Phụ lục | `references/07-citations-and-appendices.md` |
+| Rà soát Trích dẫn, Danh mục Tài liệu tham khảo & Phụ lục | `references/07-citations-and-appendices.md` |
 | Ghép file, Giảm Turnitin & Paraphrase | `references/08-merge-and-paraphrase.md` |
 | Ôn tập & Giả lập Hội đồng Bảo vệ | `references/09-defense-and-viva-prep.md` |
 | Xuất Báo cáo toàn văn ra Word (.docx chuẩn NEU) | Thực thi `python scripts/export_to_docx.py <thư mục drafts>` |

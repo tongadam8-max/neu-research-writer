@@ -36,7 +36,7 @@ Không chép lại định nghĩa sách giáo khoa một cách rời rạc. Vớ
 
 ## 3. Quy trình định nghĩa Khái niệm nghiên cứu (3 bước)
 
-Với mỗi biến tiềm ẩn chính trong mô hình (`project-context.md`), triển khai đúng 3 bước:
+Với mỗi biến tiềm ẩn chính trong mô hình (`project-context.md`), triển khai theo 3 bước mặc định (tác giả có thể linh hoạt mở rộng theo mạch lập luận):
 1. **Dòng chảy khái niệm học thuật:** Trình bày 2-3 định nghĩa kinh điển và hiện đại từ các nguồn đã xác thực, cho thấy sự tiến hóa hoặc góc nhìn đa chiều của khái niệm.
 2. **Phân tách cấu phần (nếu có):** Làm rõ các khía cạnh đo lường chính của khái niệm (tần suất, cường độ, nhận thức, kỹ năng, hành vi...).
 3. **Tuyên bố khái niệm thao tác (Operational Definition):** Chốt rõ: *"Kế thừa quan điểm của [Tác giả], trong phạm vi nghiên cứu này, [Tên biến] được xác định là..."*. Nếu thuật ngữ tiếng Việt dễ gây hiểu nhầm sắc thái cảm tính, bổ sung 1 câu ghi chú làm rõ tính trung tính học thuật của thuật ngữ.

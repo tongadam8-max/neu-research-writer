@@ -19,6 +19,9 @@ def clean_latex_and_text(text):
         text = text.replace(k, v)
     text = text.replace('$', '')
     
+    # Chuyển đổi số mũ toán học R^2, f^2, ^3
+    text = text.replace('^2', '²').replace('^3', '³')
+    
     # Ép chuẩn Smart Quotes
     text = re.sub(r'"([^"]*)"', r'“\1”', text)
     text = re.sub(r"(^|\s)'([^']*)'(?=\s|[.,;:!?]|$)", r'\1“\2”', text)
@@ -53,13 +56,23 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
         print(f"Không tìm thấy thư mục {input_folder}")
         return
 
-    md_files = sorted([f for f in os.listdir(input_folder) if f.endswith('.md') and not f.startswith('test-')])
+    all_md = sorted([f for f in os.listdir(input_folder) if f.endswith('.md')])
+    md_files = [f for f in all_md if not f.startswith('test-')]
+    if not md_files:
+        md_files = all_md
     
     for md_file in md_files:
         with open(os.path.join(input_folder, md_file), 'r', encoding='utf-8') as f:
             content = f.read()
             
-            content = re.sub(r'```.*?```', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content, flags=re.DOTALL)
+            # CÀN QUÉT ĐỒ THỊ ASCII
+            def replace_ascii_code_blocks(match):
+                block = match.group(0)
+                if re.search(r'[-|+/\\]{3,}', block):
+                    return '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n'
+                return ''
+
+            content = re.sub(r'```.*?```', replace_ascii_code_blocks, content, flags=re.DOTALL)
             content = re.sub(r'(?:[ /\|+-]{3,}\n){2,}', '\n[CHÈN HÌNH ẢNH ĐỒ THỊ TỪ PHẦN MỀM VÀO ĐÂY]\n', content)
 
             html = markdown.markdown(content, extensions=['tables'])

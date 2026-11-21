@@ -26,7 +26,7 @@
   - Tổng số phiếu thu về: `...`
   - Số phiếu bị loại (nêu rõ lý do từng lớp lọc): `...`
   - **Cỡ mẫu hợp lệ cuối cùng ($N$):** `...` (tỷ lệ `...%`)
-- **Đặc điểm mẫu nổi bật (Mục 3.1):**
+- **Đặc điểm mẫu nổi bật (Mục x.1):**
   - [Ghi 2-3 con số thực trạng quan trọng nhất cần nhấn mạnh lại ở Thảo luận/Khuyến nghị]
 - **Tinh lọc mô hình đo lường (Outer Model / EFA-CFA):**
   - Biến quan sát bị loại (nếu có) & lý do: `[Không có / Ghi mã biến]`

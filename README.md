@@ -66,13 +66,13 @@ neu-research-writer/
 
 Toàn bộ nhóm vận hành trên GitHub repository `tongadam8-max/neu-research-writer` với **nhánh mặc định là `BNPL-gr19`**. Mỗi thành viên sở hữu 01 nhánh độc lập (nhiệm vụ cụ thể do nhóm họp thống nhất và phân công sau):
 
-| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ chính được phân công |
+| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ phân công |
 | :---: | :--- | :---: | :--- |
-| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | Điều phối chung, duyệt PR, Chương 1 & Phụ lục |
-| 2 | **Vũ Anh Khôi** | `khoi` | Chương 2: Cơ sở lý thuyết & Phát triển giả thuyết |
-| 3 | **Doãn Quỳnh Anh** | `qanh` | Chương 3: Phương pháp nghiên cứu & Thang đo |
-| 4 | **Võ Thái Lâm** | `lam` | Chương 4: Kết quả xử lý SmartPLS 4 / SPSS 27 |
-| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | Chương 4 (Thảo luận) & Chương 5: Khuyến nghị, Kết luận |
+| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | *[Chờ nhóm họp phân công]* |
+| 2 | **Vũ Anh Khôi** | `khoi` | *[Chờ nhóm họp phân công]* |
+| 3 | **Doãn Quỳnh Anh** | `qanh` | *[Chờ nhóm họp phân công]* |
+| 4 | **Võ Thái Lâm** | `lam` | *[Chờ nhóm họp phân công]* |
+| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | *[Chờ nhóm họp phân công]* |
 
 ---
 
@@ -83,7 +83,7 @@ Trước khi bắt đầu viết, bạn mở Terminal (PowerShell hoặc Git Bas
 ```bash
 git fetch origin
 git checkout <tên_nhánh_của_bạn>
-# Ví dụ đối với Khôi: git checkout khoi
+# Ví dụ: git checkout bao (hoặc khoi, lam, qanh, trinh)
 git pull origin <tên_nhánh_của_bạn>
 ```
 
@@ -100,7 +100,7 @@ Thành viên có thể linh hoạt chọn **1 trong 2 cách đơn giản** dư�
   2. Đính kèm (tải lên) 4 file tài liệu sau để AI có đầy đủ dữ liệu:
      - `SKILL.md` (Bộ quy tắc bắt buộc về phong cách học thuật và chuẩn kiểm định).
      - `templates/project-context.md` (Khung bối cảnh đề tài, mô hình nghiên cứu, thang đo và 27 tài liệu tham khảo đã xác thực).
-     - File hướng dẫn nghiệp vụ tương ứng trong thư mục `references/` (Ví dụ: Khôi viết Chương 2 thì đính kèm `references/02-literature-and-hypotheses.md`; Quỳnh Anh viết Chương 3 đính kèm `references/03-methodology.md`).
+     - File hướng dẫn nghiệp vụ tương ứng trong thư mục `references/` (Ví dụ: nếu viết Chương 2 thì đính kèm `references/02-literature-and-hypotheses.md`; nếu viết Chương 3 thì đính kèm `references/03-methodology.md`; nếu viết Chương 4 thì đính kèm `references/04-results-and-discussion.md`).
      - Bảng số liệu xuất từ phần mềm hoặc tóm tắt nghiên cứu (nếu làm Chương 4 hoặc Chương 2).
   3. Sau khi AI tạo xong văn bản, bạn sao chép toàn bộ nội dung và dán vào file `.md` tương ứng trong thư mục `drafts/`.
 

@@ -64,15 +64,15 @@ neu-research-writer/
 
 ## 3. Hệ thống Nhánh (Git Branches) & Phân công nhiệm vụ
 
-Toàn bộ nhóm vận hành trên GitHub repository `tongadam8-max/neu-research-writer` với **nhánh mặc định là `BNPL-gr19`**. Mỗi thành viên làm việc trên nhánh độc lập:
+Toàn bộ nhóm vận hành trên GitHub repository `tongadam8-max/neu-research-writer` với **nhánh mặc định là `BNPL-gr19`**. Mỗi thành viên sở hữu 01 nhánh độc lập (nhiệm vụ cụ thể do nhóm họp thống nhất và phân công sau):
 
-| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ chính được phân công |
+| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ phân công |
 | :---: | :--- | :---: | :--- |
-| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | Điều phối chung, duyệt PR, Chương 1 & Phụ lục |
-| 2 | **Vũ Anh Khôi** | `khoi` | Chương 2: Cơ sở lý thuyết & Phát triển giả thuyết |
-| 3 | **Doãn Quỳnh Anh** | `qanh` | Chương 3: Phương pháp nghiên cứu & Thang đo |
-| 4 | **Võ Thái Lâm** | `lam` | Chương 4: Kết quả xử lý SmartPLS 4 / SPSS 27 |
-| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | Chương 4 (Thảo luận) & Chương 5: Khuyến nghị, Kết luận |
+| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | *[Chờ nhóm họp phân công]* |
+| 2 | **Vũ Anh Khôi** | `khoi` | *[Chờ nhóm họp phân công]* |
+| 3 | **Doãn Quỳnh Anh** | `qanh` | *[Chờ nhóm họp phân công]* |
+| 4 | **Võ Thái Lâm** | `lam` | *[Chờ nhóm họp phân công]* |
+| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | *[Chờ nhóm họp phân công]* |
 
 ---
 

@@ -2,6 +2,11 @@
 
 Áp dụng module này khi viết **Phần Mở đầu** (bố cục 4 chương) hoặc **Chương 1: Giới thiệu đề tài** (bố cục 5 chương). Mục tiêu của phần này là thiết lập một "phễu lập luận" chặt chẽ, chứng minh đề tài vừa cấp thiết trong thực tế vừa có đóng góp rõ ràng về mặt học thuật.
 
+> **Lưu ý phối hợp khi viết Chương 1 (Bố cục 5 chương):** 
+> - Đối với tiểu mục **1.1. Tổng quan nghiên cứu** (gồm 1.1.1, 1.1.2, 1.1.3): Bắt buộc nạp kèm và áp dụng kỹ thuật **Tổng hợp theo luồng lập luận 2 chiều (Thematic 2D Synthesis)** và gom nhóm tác giả tại **Mục 1 của `references/02-literature-and-hypotheses.md`**.
+> - Đối với tiểu mục **1.1.4. Đánh giá chung và khoảng trống nghiên cứu**: Áp dụng **Ma trận Khoảng trống 4 tầng** tại Mục 3 của tài liệu này.
+> - Đối với tiểu mục **1.5. Phương pháp nghiên cứu** (viết tóm tắt): Khái quát ngắn gọn thiết kế nghiên cứu từ `references/03-methodology.md`.
+
 ---
 
 ## 1. Cấu trúc chuẩn & Mạch tư duy phễu ngược

@@ -31,7 +31,7 @@ Load only the reference files required for the user's current target section to 
 | Mục tiêu / Phân đoạn cần viết (Target Section Requested) | Primary Reference File(s) to Load |
 | :--- | :--- |
 | Dựng Outline / Cấu trúc Báo cáo toàn văn (Outline Architect) | `references/00-outline-architect.md` |
-| Phần Mở đầu / Giới thiệu đề tài / Khoảng trống (Opening / Introduction / Research Gaps) | `references/01-intro-and-gap.md` |
+| Phần Mở đầu / Giới thiệu đề tài / Khoảng trống (Opening / Introduction / Research Gaps) | `references/01-intro-and-gap.md` *(kèm Mục 1 `references/02-literature-and-hypotheses.md` nếu viết mục 1.1 Tổng quan nghiên cứu)* |
 | Tổng quan nghiên cứu / Cơ sở lý thuyết / Giả thuyết (Literature Review / Concepts / Theory / Hypotheses) | `references/02-literature-and-hypotheses.md` |
 | Phương pháp nghiên cứu / Thang đo / Cỡ mẫu / Phân tích (Methodology / Scales / Sampling / Data Analysis) | `references/03-methodology.md` + `references/methods/survey-sem-guide.md` |
 | Kết quả nghiên cứu / Kiểm định mô hình PLS/CB-SEM (Empirical Results / Model Testing) | `references/04-results-and-discussion.md` + `references/methods/survey-sem-guide.md` |
@@ -51,7 +51,7 @@ This skill separates **hard scientific standards** (always enforced) from **adap
 ### Tier 1: Non-Negotiable Scientific Standards (Always Enforced)
 
 1. **Zero-Hallucination Guardrails:**
-   - **Citations:** Cite only works in `project-context.md` OR new verified sources provided directly by the team member in the current session. If a claim lacks backing, insert `[CẦN BỔ SUNG TRÍCH DẪN: mô tả luận điểm cần tìm nguồn]` instead of inventing a reference.
+   - **Citations:** Cite only works in `project-context.md` OR new verified sources provided directly by the team member in the current session. Pre-approved methodological benchmark references from `references/methods/survey-sem-guide.md` (such as Hair et al., Cohen, Fornell & Larcker, Henseler et al., Hu & Bentler) are officially recognized technical standards for statistical thresholds. If an empirical claim lacks backing, insert `[CẦN BỔ SUNG TRÍCH DẪN: mô tả luận điểm cần tìm nguồn]` instead of inventing a reference.
    - **Statistics:** Report only real numerical values from actual software outputs provided by the user. Never fabricate placeholder numbers; use `[CHỜ SỐ LIỆU TỪ PHẦN MỀM]` when analysis is pending.
    - **Zero Number Drift:** Every count, percentage, coefficient, and p-value in prose must match its corresponding table 100%.
 

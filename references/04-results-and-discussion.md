@@ -4,8 +4,9 @@
 
 > **Kiểm tra chế độ bố cục trong `project-context.md` trước khi viết:**
 > - **Bố cục báo cáo (4 chương hay 5 chương):** Tuân thủ tuyệt đối danh số và tên chương trong Outline tại Mục 3 của `project-context.md` (không gắn cứng số chương mặc định).
-> - **Chế độ Tách riêng:** Chương/Mục Kết quả tập trung **báo cáo kết quả thực nghiệm thuần túy** (bảng biểu, kiểm định giả thuyết, đồ thị, diễn giải ngắn gọn ý nghĩa thống kê); phần **Thảo luận đối chiếu nghiên cứu trước** viết sâu ở chương/mục riêng biệt tiếp theo.
-> - **Chế độ Gộp chung:** Viết kết quả kiểm định giả thuyết gắn liền ngay với phần thảo luận đối chiếu lý thuyết và nghiên cứu trước trong cùng một chương/tiểu mục.
+> - **Phân định rõ Kết quả và Thảo luận trong Chương 4:** Mặc dù tiêu đề chương là gộp ("CHƯƠNG 4: KẾT QUẢ NGHIÊN CỨU VÀ THẢO LUẬN"), bài nghiên cứu tuân thủ cấu trúc phân tầng tiểu mục rõ rệt:
+>   - **Tiểu mục 4.1, 4.2, 4.3:** Báo cáo kết quả thực nghiệm thuần túy (Thống kê mô tả mẫu & thực trạng, Đánh giá Outer Model, Đánh giá Inner Model & Kiểm định giả thuyết H1, H2, H3, đồ thị Simple Slope). Diễn giải ngắn gọn ý nghĩa thống kê; tuyệt đối không mở rộng thảo luận học thuật lan man tại đây.
+>   - **Tiểu mục 4.4:** Dành trọn vẹn cho **Thảo luận kết quả nghiên cứu** (4.4.1 về tác động của BNPL đến IB; 4.4.2 về vai trò trực tiếp và điều tiết của FL). Tại đây mới liên hệ sâu với lý thuyết nền (Kế toán tâm lý, Xử lý kép) và đối chiếu với các công trình nghiên cứu trước. Không lặp lại các phân tích này ở mục 4.3.
 
 > **Yêu cầu phối hợp:** Luôn đọc kèm `references/methods/survey-sem-guide.md` để chuẩn hóa bảng biểu và cách đọc chỉ số.
 

@@ -14,10 +14,8 @@
 - Phân loại rõ: **Tài liệu Tiếng Việt** (xếp A-Z theo Tên) và **Tài liệu Tiếng nước ngoài** (xếp A-Z theo Họ).
 - Format chuẩn bài báo: `Họ, Chữ cái đầu tên. (Năm). Tên bài báo. Tên Tạp chí in nghiêng, Tập(Số), Trang. DOI (nếu có)`.
 
-## 3. Khuôn mẫu Phụ lục
-Liệt kê tự động danh sách các Phụ lục cần có ở cuối báo cáo:
-- Phụ lục 1: Phiếu khảo sát (Tiếng Việt).
-- Phụ lục 2: Bảng mã hóa thang đo và nguồn gốc.
-- Phụ lục 3: Bảng kết quả thống kê mô tả chi tiết.
-- Phụ lục 4: Kết quả đánh giá Outer Model (Hệ số tải, HTMT).
-- Phụ lục 5: Đồ thị / Sơ đồ cấu trúc từ phần mềm.
+## 3. Khuôn mẫu Phụ lục (Khóa theo project-context.md)
+Liệt kê tự động danh sách các Phụ lục chuẩn hóa của đề tài:
+- Phụ lục 1: Phiếu điều tra khảo sát.
+- Phụ lục 2: Thống kê mô tả mẫu.
+- Phụ lục 3: Kết quả phân tích phần mềm (tổng hợp Outer Model, Inner Model và đồ thị).

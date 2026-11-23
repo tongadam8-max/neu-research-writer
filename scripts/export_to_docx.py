@@ -86,6 +86,10 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                 if element.name in ['h1', 'h2', 'h3', 'h4']:
                     raw_title = clean_latex_and_text(element.text)
                     
+                    # Bỏ qua tiêu đề phân nhóm PHẦN KẾT nếu có để tránh tạo trang trắng mồ côi
+                    if "PHẦN KẾT" in raw_title.upper() and element.name == 'h1':
+                        continue
+
                     # Bắt tiêu đề TÀI LIỆU THAM KHẢO
                     if "TÀI LIỆU THAM KHẢO" in raw_title.upper():
                         is_in_reference_section = True
@@ -101,7 +105,9 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                         continue
                         
                     level = int(element.name[1])
-                    if level == 1 and len(doc.paragraphs) > 0:
+                    # Ngắt trang trước Heading 1 hoặc trước mỗi Phụ lục độc lập
+                    is_appendix = "PHỤ LỤC" in raw_title.upper()
+                    if (level == 1 or is_appendix) and len(doc.paragraphs) > 0:
                         doc.add_page_break()
                     heading = doc.add_heading(raw_title, level=level)
                     for run in heading.runs:
@@ -123,8 +129,9 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                     for line in raw_lines:
                         # Chỉ gỡ bỏ ký tự gạch đầu dòng/chấm tròn bullet
                         line = re.sub(r'^\s*[-•]\s*', '', line)
-                        # Chỉ gỡ bỏ tiền tố đánh số thứ tự danh sách (ví dụ: '1. ', '1.1. ', '1.1.1. ')
-                        line = re.sub(r'^\s*\d+(\.\d+)*\.\s+', '', line)
+                        # Chỉ gỡ bỏ tiền tố đánh số thứ tự danh sách nếu không phải trong phần tham khảo
+                        if not is_in_reference_section:
+                            line = re.sub(r'^\s*\d+(\.\d+)*\.\s+', '', line)
                         line = line.strip()
                         
                         if not line: continue
@@ -144,8 +151,22 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                                 p.paragraph_format.first_line_indent = Cm(-1.27)
                                 ref_counter += 1
                             else:
+                                # Nhận diện tiêu đề Bảng/Hình/Sơ đồ và Nguồn
+                                is_caption = bool(re.match(r'^(Bảng|Hình|Sơ đồ)\s+\d+(\.\d+)*[:.]', line, re.IGNORECASE))
+                                is_source = bool(re.match(r'^\(?\*?Nguồn[:\s]', line, re.IGNORECASE))
+                                
                                 p = doc.add_paragraph(line)
-                                p.paragraph_format.first_line_indent = Cm(1.27)
+                                if is_caption:
+                                    p.paragraph_format.first_line_indent = Cm(0)
+                                    for run in p.runs:
+                                        run.font.bold = True
+                                elif is_source:
+                                    p.paragraph_format.first_line_indent = Cm(0)
+                                    p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
+                                    for run in p.runs:
+                                        run.font.italic = True
+                                else:
+                                    p.paragraph_format.first_line_indent = Cm(1.27)
                 
                 elif element.name == 'table':
                     rows = element.find_all('tr')

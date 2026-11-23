@@ -1,108 +1,156 @@
-# NEU Research Writer Skill (Bộ công cụ viết toàn văn NCKH theo từng chương)
+# NEU Research Writer (Bộ công cụ & Khung làm việc NCKH Nhóm 19)
 
-Kho lưu trữ bộ kỹ năng chuẩn hóa quy trình viết toàn văn báo cáo Nghiên cứu khoa học sinh viên (cấp Khoa / cấp Trường) tại Đại học Kinh tế Quốc dân (NEU). Bộ công cụ áp dụng tư duy cấu trúc "Vòng lặp học thuật khép kín" tiệm cận chuẩn bài báo quốc tế Q1, đồng thời tuân thủ chặt chẽ quy chuẩn trình bày và tính thực tiễn trong nước.
+> **Đề tài:** Ảnh hưởng của việc sử dụng dịch vụ Mua trước trả sau (BNPL) đến hành vi mua sắm bốc đồng của sinh viên tại Hà Nội: Vai trò điều tiết của hiểu biết tài chính  
+> **Đơn vị:** Khoa Khoa học Quản lý - Trường Đại học Kinh tế Quốc dân (NEU)  
+> **GVHD:** TS. Phùng Minh Thu Thủy  
+> **Nhóm nghiên cứu (Nhóm 19):** Tống Gia Bảo (Trưởng nhóm), Vũ Anh Khôi, Doãn Quỳnh Anh, Võ Thái Lâm, Nguyễn Thái Phương Trinh.
 
-## 1. Mục tiêu thiết kế
+---
 
-- **Dùng chung cho mọi đề tài:** Tách biệt hoàn toàn quy chuẩn viết (`SKILL.md` & `references/`) khỏi nội dung đề tài cụ thể (`templates/project-context.md`).
-- **Đồng bộ hóa làm việc nhóm:** Giúp nhiều thành viên viết các chương khác nhau song song nhưng khi ghép lại vẫn thống nhất 100% văn phong, ký hiệu biến, giả thuyết và mạch lập luận.
-- **Chống bịa nguồn & chống lệch số liệu:** Tự động gắn thẻ đánh dấu chỗ thiếu trích dẫn thay vì bịa tài liệu; bắt buộc khớp tuyệt đối số liệu giữa bảng và văn bản.
+## 1. Mục tiêu & Nguyên tắc vận hành
 
-## 2. Cấu trúc thư mục
+1. **Khóa trí nhớ hệ thống (`templates/project-context.md`):** Đã khóa cứng 100% bối cảnh đề tài, Outline 5 chương, 15 biến quan sát (`BNPL1`–`BNPL4`, `FL1`–`FL6`, `IB1`–`IB5`), 03 biến kiểm soát (`CONTROL1`–`CONTROL3`) và **27 tài liệu tham khảo đã xác thực chuẩn APA 7th**.
+2. **Quy chuẩn khoa học tiệm cận Q1:** Áp dụng tư duy lập luận "Vòng lặp học thuật khép kín" kết hợp cơ chế kiểm định chất lượng 2 vòng (Pass 1 - Cốt lõi & Pass 2 - Định dạng) trong `checklists/chapter-qa-gate.md`.
+3. **Phân nhánh độc lập cho 5 thành viên:** Mỗi thành viên sở hữu 01 branch riêng biệt để viết các phần được phân công, tránh xung đột mã nguồn (merge conflict) và dễ dàng quản lý tiến độ.
+4. **Tự động hóa xuất bản Word chuẩn NEU:** Tự động hợp nhất 39 file bản thảo Markdown trong thư mục `drafts/` thành file báo cáo nghiệm thu hoàn chỉnh [BaoCaoTongKet.docx](file:///d:/neu-research-writer/BaoCaoTongKet.docx) chuẩn lề, font Times New Roman 13pt, bảng viền Table Grid và phân trang tự động.
+
+---
+
+## 2. Cấu trúc thư mục dự án
 
 ```text
 neu-research-writer/
-├── README.md                              # Tài liệu hướng dẫn này
-├── SKILL.md                               # File điều phối lõi (luật văn phong, chống bịa nguồn, định tuyến)
-├── drafts/                                # Thư mục chứa các file bản thảo .md để xuất Word
-│   └── .gitkeep
+├── README.md                              # Cẩm nang hướng dẫn sử dụng và quy trình làm việc nhóm
+├── SKILL.md                               # Bộ quy tắc điều phối AI lõi (luật khoa học, trích dẫn, định tuyến)
+├── BaoCaoTongKet.docx                     # File báo cáo toàn văn tổng hợp xuất ra chuẩn mẫu NEU
+├── requirements.txt                       # Danh mục thư viện Python cần thiết
+├── drafts/                                # HỆ THỐNG 39 FILE BẢN THẢO OUTLINE 5 CHƯƠNG ĐÃ KHÓA
+│   ├── 00-01-Loi-cam-doan.md
+│   ├── 00-02-Danh-muc-Bang-bieu.md        # Trình bày dạng Bảng Markdown
+│   ├── 00-03-Danh-muc-Hinh.md             # Trình bày dạng Bảng Markdown
+│   ├── 00-04-Danh-muc-Tu-viet-tat.md      # Trình bày dạng Bảng Markdown
+│   ├── 01-00-Chuong-1-Gioi-thieu.md đến 01-1.6-... (Chương 1: Giới thiệu đề tài)
+│   ├── 02-00-Chuong-2-... đến 02-2.4-...          (Chương 2: Cơ sở lý thuyết & Mô hình)
+│   ├── 03-00-Chuong-3-... đến 03-3.5-...          (Chương 3: Phương pháp nghiên cứu)
+│   ├── 04-00-Chuong-4-... đến 04-4.4-...          (Chương 4: Kết quả nghiên cứu & Thảo luận)
+│   ├── 05-00-Chuong-5-... đến 05-5.4-...          (Chương 5: Kết luận & Hàm ý quản trị)
+│   ├── 99-00-Tai-lieu-tham-khao.md                # 27 tài liệu tham khảo chuẩn APA 7th
+│   ├── 99-01-Phu-luc-1-Phieu-dieu-tra-khao-sat.md # Phụ lục 1
+│   ├── 99-02-Phu-luc-2-Thong-ke-mo-ta-mau.md      # Phụ lục 2
+│   └── 99-03-Phu-luc-3.md                         # Phụ lục 3: Kết quả phân tích phần mềm
 ├── scripts/
-│   └── export_to_docx.py                  # Script Python tự động ghép và xuất bản thảo ra .docx chuẩn NEU
-├── references/
-│   ├── 00-outline-architect.md            # Kiến trúc sư dựng Outline báo cáo toàn văn (4 hoặc 5 chương)
-│   ├── 01-intro-and-gap.md                # Viết Phần Mở đầu & Ma trận khoảng trống 4 tầng
+│   └── export_to_docx.py                  # Script biên dịch tự động drafts/*.md -> BaoCaoTongKet.docx
+├── references/                            # 10 Module cẩm nang hướng dẫn phương pháp học thuật chuyên sâu
+│   ├── 00-outline-architect.md            # Nguyên tắc cấu trúc outline & phân tầng mục lục
+│   ├── 01-intro-and-gap.md                # Viết Mở đầu & Ma trận khoảng trống 4 tầng
 │   ├── 02-literature-and-hypotheses.md    # Viết Tổng quan 2 chiều, Lý thuyết nền & Giả thuyết
-│   ├── 03-methodology.md                  # Viết Phương pháp, Thang đo, Pilot & Làm sạch dữ liệu
-│   ├── 04-results-and-discussion.md       # Viết Kết quả thực nghiệm & Thảo luận 2 nhánh
-│   ├── 05-implications-and-conclusion.md  # Viết Khuyến nghị neo số liệu, Hạn chế & Kết luận
+│   ├── 03-methodology.md                  # Viết Phương pháp, Thiết kế chọn mẫu & Thang đo
+│   ├── 04-results-and-discussion.md       # Báo cáo thực nghiệm 4 tầng & Thảo luận đối chiếu
+│   ├── 05-implications-and-conclusion.md  # Viết Khuyến nghị neo số liệu & Kết luận
 │   ├── 06-literature-matrix-extractor.md  # Trích xuất và lập ma trận tổng quan bài báo mới
-│   ├── 07-citations-and-appendices.md     # Chuẩn hóa trích dẫn APA 7th & hệ thống Phụ lục NEU
+│   ├── 07-citations-and-appendices.md     # Chuẩn trích dẫn APA 7th & Quy chuẩn phụ lục
 │   ├── 08-merge-and-paraphrase.md         # Hợp nhất liên chương, chuyển ý & khử trùng lặp Turnitin
-│   ├── 09-defense-and-viva-prep.md        # Giả lập phản biện hội đồng & ôn luyện bảo vệ
+│   ├── 09-defense-and-viva-prep.md        # Giả lập phản biện hội đồng & câu hỏi bảo vệ
 │   └── methods/
-│       └── survey-sem-guide.md            # Bộ ngưỡng thống kê & mẫu bảng PLS-SEM / CB-SEM
+│       └── survey-sem-guide.md            # Bộ ngưỡng PLS-SEM (SmartPLS 4) & CB-SEM (SPSS/AMOS)
 ├── checklists/
-│   └── chapter-qa-gate.md                 # Bộ lọc tự kiểm định 2 vòng (Pass 1 & Pass 2)
+│   └── chapter-qa-gate.md                 # Bộ lọc tự kiểm định 2 vòng trước khi bàn giao bản thảo
 └── templates/
-    ├── project-context.md                 # File cấu hình dùng chung của nhóm (điền 1 lần/đề tài)
-    └── chapter-handoff.md                 # Phiếu bàn giao kết quả giữa các thành viên viết chương
+    ├── project-context.md                 # Xương sống thông tin đề tài (ĐÃ ĐIỀN ĐỦ THÔNG TIN NHÓM 19)
+    └── chapter-handoff.md                 # Phiếu bàn giao số liệu thực nghiệm giữa các chương
 ```
 
-## 3. Hướng dẫn cài đặt và sử dụng
+---
 
-### Cách 1: Dành cho thành viên dùng AI Agent (Antigravity / Claude Code / Cursor / Windsurf / Gemini CLI)
+## 3. Hệ thống Nhánh (Git Branches) & Phân công nhiệm vụ
 
-1. Clone repo về máy:
+Toàn bộ nhóm vận hành trên GitHub repository `tongadam8-max/neu-research-writer` với **nhánh mặc định là `BNPL-gr19`**. Mỗi thành viên làm việc trên nhánh độc lập:
+
+| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ chính được phân công |
+| :---: | :--- | :---: | :--- |
+| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | Điều phối chung, duyệt PR, Chương 1 & Phụ lục |
+| 2 | **Vũ Anh Khôi** | `khoi` | Chương 2: Cơ sở lý thuyết & Phát triển giả thuyết |
+| 3 | **Doãn Quỳnh Anh** | `qanh` | Chương 3: Phương pháp nghiên cứu & Thang đo |
+| 4 | **Võ Thái Lâm** | `lam` | Chương 4: Kết quả xử lý SmartPLS 4 / SPSS 27 |
+| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | Chương 4 (Thảo luận) & Chương 5: Khuyến nghị, Kết luận |
+
+---
+
+## 4. Hướng dẫn quy trình làm việc cho từng thành viên
+
+### Bước 1: Kéo code và chuyển về nhánh cá nhân
+Trước khi bắt đầu viết, mở Terminal (PowerShell / Git Bash) tại thư mục dự án:
+```bash
+git fetch origin
+git checkout <tên_nhánh_của_bạn>
+# Ví dụ đối với Khôi: git checkout khoi
+git pull origin <tên_nhánh_của_bạn>
+```
+
+### Bước 2: Triển khai viết bản thảo cùng AI
+Bạn có thể sử dụng AI Agent (Antigravity, Cursor, Windsurf, Claude Code) hoặc bản Web (Gemini / ChatGPT):
+- **Nếu dùng AI Agent trong IDE:** Chỉ thị cho AI đọc `templates/project-context.md` và viết trực tiếp vào file tương ứng trong thư mục `drafts/` (ví dụ: `drafts/02-2.1-Cac-khai-niem-co-ban.md`).
+- **Nếu dùng Web (ChatGPT / Claude / Gemini):** Đính kèm các file:
+  1. `SKILL.md` (Bộ quy tắc bắt buộc)
+  2. `templates/project-context.md` (Bối cảnh đề tài, thang đo, 27 trích dẫn)
+  3. `references/<module_tương_ứng>.md`
+  4. Bảng số liệu hoặc tóm tắt tài liệu của bạn (nếu viết Chương 4 hoặc Chương 2).
+
+### Bước 3: Kiểm tra chất lượng trước khi nộp
+Mọi đoạn văn trước khi lưu vào `drafts/` bắt buộc phải vượt qua bộ lọc tại `checklists/chapter-qa-gate.md`:
+- [x] Không gạch đầu dòng (-) trong thân bài; viết đoạn văn học thuật hoàn chỉnh dùng từ nối `Thứ nhất, Thứ hai...`.
+- [x] Không bịa trích dẫn (chỉ dùng trong 27 nguồn đã xác thực hoặc Hair et al., Cohen).
+- [x] Không bọc ngoặc kép vào các thuật ngữ như Mua trước trả sau, Hiểu biết tài chính, Mua sắm bốc đồng.
+
+### Bước 4: Lưu thay đổi và đẩy lên GitHub
+Sau khi hoàn thành phần viết của mình:
+```bash
+git add drafts/
+git commit -m "feat(chX): viết hoàn thiện mục X.X theo chuẩn NEU"
+git push origin <tên_nhánh_của_bạn>
+```
+
+### Bước 5: Hợp nhất vào nhánh chính (`BNPL-gr19`)
+Lên giao diện GitHub, tạo một **Pull Request (PR)** từ nhánh của bạn vào nhánh `BNPL-gr19`. Trưởng nhóm (Gia Bảo) sẽ review và hợp nhất nội dung.
+
+---
+
+## 5. Hướng dẫn xuất Báo cáo toàn văn ra Word (`.docx`)
+
+Sau khi các file trong `drafts/` được cập nhật, bất kỳ thành viên nào cũng có thể chạy lệnh để xuất file Word nghiệm thu:
+
+1. **Cài đặt thư viện (chỉ cần chạy lần đầu tiên):**
    ```bash
-   git clone <url-repo-cua-nhom>
+   pip install -r requirements.txt
    ```
-2. Nhóm trưởng điền thông tin khoa học lõi của đề tài cùng **Outline mới của bài báo cáo toàn văn** vào `templates/project-context.md` và commit lên nhánh chính (`main`).
-3. Từng thành viên pull code mới nhất về, mở AI Agent tại thư mục repo và gọi trực tiếp theo mục mình phụ trách.
+2. **Thực thi script xuất Word:**
+   ```bash
+   python scripts/export_to_docx.py
+   # hoặc nếu dùng môi trường ảo:
+   .venv\Scripts\python.exe scripts\export_to_docx.py
+   ```
+3. File kết quả sẽ được tạo tại [BaoCaoTongKet.docx](file:///d:/neu-research-writer/BaoCaoTongKet.docx) với đầy đủ định dạng chuẩn:
+   - Lề chuẩn: Trái 3,5 cm; Phải 2,0 cm; Trên 2,5 cm; Dưới 2,5 cm.
+   - Giãn dòng 1.5 lines, thụt đầu dòng 1,27 cm, căn đều 2 bên (Justify).
+   - Tự động ngắt trang hợp lý giữa các chương, tài liệu tham khảo và từng phụ lục.
 
-### Cách 2: Dành cho thành viên dùng bản Web (Gemini Web / ChatGPT)
+---
 
-1. Tạo một Project / Gem (hoặc đoạn chat mới cho từng chương).
-2. Tải lên (hoặc dán) đúng **3-4 file cần thiết** cho phiên làm việc:
-   - `SKILL.md` (luôn đính kèm)
-   - `templates/project-context.md` (luôn đính kèm)
-   - `references/<file-cua-chuong-dang-viet>.md` (+ `survey-sem-guide.md` nếu viết Phương pháp hoặc Kết quả)
-   - `templates/chapter-handoff.md` (bắt buộc khi viết Chương Kết quả, Thảo luận, Khuyến nghị, Kết luận)
-3. Dán bảng số liệu hoặc ghi chú tài liệu của bạn kèm câu lệnh mẫu bên dưới.
+## 6. Bộ câu lệnh mẫu (Prompt Templates)
 
-## 4. Quy trình phối hợp nhóm chuẩn (5 bước)
+Dưới đây là các câu lệnh mẫu được tối ưu sẵn để bạn sao chép khi làm việc với AI:
 
-1. **Khóa khung chung:** Nhóm trưởng tổng hợp thông tin khoa học lõi của đề tài (biến số, thang đo, giả thuyết, kho tài liệu tham khảo) và điền **Outline mới của bài báo cáo hoàn chỉnh** vào `templates/project-context.md` (không lấy lại mục lục của bản thuyết minh đề cương), sau đó commit lên nhánh `main` để cả nhóm dùng chung.
-2. **Viết cuốn chiếu từng tiểu mục:** Không ra lệnh "viết cả chương 20 trang trong 1 lượt". Hãy viết từng mục lớn (ví dụ `1.1`, rồi `1.2`, rồi `1.3`) để AI giữ được độ sâu lập luận và chiều dài toàn văn.
-3. **Cập nhật phiếu bàn giao:** Sau khi chạy xong dữ liệu và chốt Chương Kết quả, người phụ trách dữ liệu điền toàn bộ hệ số thực tế vào `templates/chapter-handoff.md` và đẩy lên GitHub.
-4. **Viết Thảo luận & Khuyến nghị neo số liệu:** Thành viên viết Chương Thảo luận/Khuyến nghị tải `chapter-handoff.md` để AI lập luận bám sát đúng các giả thuyết được chấp nhận/bác bỏ.
-5. **Tổng biên tập rà soát:** Trước khi ghép vào file Word nộp Khoa, chạy rà soát từng chương qua `checklists/chapter-qa-gate.md`.
+### Viết Tổng quan nghiên cứu (Mục 1.1)
+> "Áp dụng `SKILL.md`, `references/01-intro-and-gap.md` và Mục 1 của `references/02-literature-and-hypotheses.md` dựa trên `templates/project-context.md`. Hãy viết toàn văn tiểu mục 1.1 Tổng quan nghiên cứu vào file `drafts/01-1.1-Tong-quan-nghien-cuu.md`. Áp dụng phương pháp tổng hợp ma trận 2 chiều, gom nhóm các tác giả cùng quan điểm từ Kho 27 tài liệu xác thực và làm nổi bật các tranh luận học thuật."
 
-## 5. Bộ câu lệnh mẫu (Prompt Templates)
+### Viết Phát triển Giả thuyết nghiên cứu (Mục 2.3)
+> "Áp dụng `SKILL.md` và `references/02-literature-and-hypotheses.md` dựa trên `templates/project-context.md`. Hãy viết toàn văn tiểu mục 2.3 Phát triển giả thuyết nghiên cứu vào file `drafts/02-2.3-Phat-trien-gia-thuyet-nghien-cuu.md`. Triển khai đầy đủ H1 (+), H2 (-) và phân tích sâu cơ chế hai chiều của H3 (H3a kìm hãm theo Thuyết Xử lý kép vs. H3b khuếch đại theo nghịch lý BNPL)."
 
-> *Lưu ý: Tên chương và số thứ tự mục (`x.x`) tự động bám sát theo Outline đã khai báo trong `project-context.md` (hỗ trợ hoàn hảo cả bố cục 4 chương lẫn 5 chương).*
+### Báo cáo Kết quả kiểm định mô hình (Mục 4.2 & 4.3)
+> "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` và `references/methods/survey-sem-guide.md`. Dựa trên bảng số liệu SmartPLS 4 tôi cung cấp dưới đây, hãy lập bảng chuẩn và viết đoạn văn phân tích thực nghiệm thuần túy vào file `drafts/04-4.2-Danh-gia-mo-hinh-do-luong-Outer-Model.md` và `drafts/04-4.3-Danh-gia-mo-hinh-cau-truc-Inner-Model-va-Kiem-dinh-gia-thuyet.md`. Tuyệt đối tuân thủ quy tắc Zero Number Drift và kiểm định hai phía cho biến điều tiết: [Dán kết quả phần mềm]."
 
-- **Viết Phần Mở đầu / Chương 1 (Giới thiệu):**
-  > "Áp dụng `SKILL.md` và `references/01-intro-and-gap.md` dựa trên `project-context.md`. Hãy viết toàn văn Phần Mở đầu / Chương Giới thiệu theo đúng Outline của đề tài và chuẩn văn phong học thuật NEU, triển khai sâu lập luận thực tiễn và khoảng trống lý luận."
+### Viết Thảo luận kết quả nghiên cứu (Mục 4.4)
+> "Áp dụng `SKILL.md` và `references/04-results-and-discussion.md` (Phần B) dựa trên `templates/project-context.md` và `templates/chapter-handoff.md`. Hãy viết toàn văn tiểu mục 4.4 Thảo luận kết quả nghiên cứu vào file `drafts/04-4.4-Thao-luan-ket-qua-nghien-cuu.md`. Đối chiếu sâu sắc từng phát hiện với Thuyết Kế toán tâm lý, Thuyết Xử lý kép và các công trình thực chứng quốc tế/Việt Nam đã tổng quan."
 
-- **Viết từng mục Chương Tổng quan & Lý thuyết:**
-  > "Áp dụng `SKILL.md` và `references/02-literature-and-hypotheses.md` dựa trên `project-context.md`. Hãy viết toàn văn Mục [Điền mã mục, ví dụ: 1.1 hoặc 2.1 - Tổng quan nghiên cứu] chỉ sử dụng các nguồn trong Kho tài liệu tham khảo đã xác thực và các tóm tắt bài báo sau đây: [Dán ghi chú bài báo]."
-
-- **Viết Chương Phương pháp nghiên cứu:**
-  > "Áp dụng `SKILL.md`, `references/03-methodology.md` và `references/methods/survey-sem-guide.md`. Hãy viết toàn văn Mục [Điền mã mục, ví dụ: 2.4 hoặc 3.4 - Phương pháp xử lý dữ liệu], đảm bảo khóa đủ các ngưỡng kiểm định cho mô hình đo lường và cấu trúc, đồng thời nêu rõ quy tắc xử lý biến kiểm soát đơn mục."
-
-- **Viết Chương Kết quả nghiên cứu từ số liệu phần mềm:**
-  > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` (chế độ Tách riêng Kết quả thuần túy) và `references/methods/survey-sem-guide.md`. Dựa trên bảng xuất SmartPLS/SPSS dưới đây, hãy chuẩn hóa bảng biểu và viết toàn văn Mục [Điền mã mục, ví dụ: 3.2 & 3.3 hoặc 4.2 & 4.3]. Tuyệt đối chỉ dùng số liệu tôi cung cấp: [Dán bảng số liệu]."
-
-- **Viết Chương Thảo luận & Khuyến nghị / Hàm ý quản trị:**
-  > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` và `references/05-implications-and-conclusion.md` dựa trên `project-context.md` và `chapter-handoff.md`. Hãy viết toàn văn Mục [Điền mã mục, ví dụ: 4.1 & 4.2 hoặc 4.4 & 5.3] (Thảo luận đối chiếu nghiên cứu trước và Hệ thống khuyến nghị neo số liệu cho các chủ thể đã chốt)."
-
-
-## 6. Nguyên tắc linh hoạt khi có dữ liệu thật & ý tưởng mới (Cơ chế 2 tầng)
-
-Bộ Skill này được thiết kế như một **tài liệu sống (living workflow)** đồng hành cùng nhóm từ lúc bắt đầu viết đến khi có kết quả chạy mô hình thực tế:
-
-- **Tầng 1 - Chuẩn khoa học bắt buộc (Luôn giữ vững):** Không bịa trích dẫn hay số liệu; số liệu trong văn bản khớp 100% với bảng phần mềm; trung thực với biến bị loại hoặc giả thuyết bị bác bỏ; tuân thủ chuẩn phương pháp (PLS-SEM/CB-SEM, luật biến kiểm soát đơn mục), văn phong học thuật NEU và APA 7th.
-- **Tầng 2 - Mở hoàn toàn cho dữ liệu mới & cách viết hay hơn:**
-  - Thành viên hoàn toàn tự do nạp thêm **bài báo mới, lập luận mới, kiểm định bổ sung** hoặc đề xuất **cách triển khai đoạn văn mượt hơn** so với gợi ý mặc định trong `references/`.
-  - Khi chạy mô hình ra **con số thực tế khác với dự kiến đề cương**, dữ liệu thật luôn có quyền ưu tiên cao nhất. AI sẽ phân tích theo số liệu mới và tự động tạo mục **Sync Alert** ở cuối câu trả lời để thành viên cập nhật nhanh vào `project-context.md` / `chapter-handoff.md` cho cả nhóm đồng bộ.
-
-
-## 7. Cơ chế Tự kiểm định 2 vòng & Phản biện trọng tâm (Bản v1.2)
-
-Để đảm bảo bản thảo đạt độ chỉn chu cao nhất cho bài nghiên cứu học thuật mà không làm chậm tiến độ của thành viên:
-
-- **Tự kiểm định 2 vòng độc lập (2-Pass Self-Audit):** Trước khi xuất bản thảo cuối cùng, AI tự động chạy qua 2 vòng lọc riêng biệt trong `checklists/chapter-qa-gate.md`:
-  1. *Vòng 1 (Cốt lõi khoa học & Dữ liệu):* Khớp tuyệt đối số liệu bảng - văn bản, nguồn trích dẫn, luật phương pháp và độ chặt của lập luận.
-  2. *Vòng 2 (Trình bày & Độ tự nhiên học thuật):* Soát đánh số Bảng/Hình, chuẩn APA 7th, dấu thập phân, chuyển ý giữa các đoạn và gọt sạch câu từ kiểu "văn AI" sáo rỗng.
-- **Hỏi chốt thông minh trước khi viết:** AI chỉ dừng lại hỏi tối đa **2-3 câu ngắn gọn** kèm gợi ý phương án khi yêu cầu thực sự thiếu dữ liệu cốt lõi, mơ hồ hoặc có nguy cơ lệch trọng tâm đề tài. Nếu đầu vào đã rõ, AI tiến hành viết ngay.
-- **Phản biện trọng tâm khách quan sau khi viết:** Cuối mỗi bản thảo, mục *Phản biện trọng tâm* sẽ gợi mở các khía cạnh chưa được khai thác hết chiều sâu lý thuyết/thực nghiệm. Nếu nội dung của thành viên đã chặt chẽ, AI ghi nhận đúng thực tế và tuyệt đối không tự bịa thêm lỗi góp ý.
+### Viết Khuyến nghị & Hàm ý quản trị (Mục 5.3)
+> "Áp dụng `SKILL.md` và `references/05-implications-and-conclusion.md` dựa trên kết quả ở `templates/chapter-handoff.md`. Hãy viết toàn văn tiểu mục 5.3 Khuyến nghị vào file `drafts/05-5.3-Khuyen-nghi-va-Ham-y-thuc-tien.md`. Áp dụng kỹ thuật Neo số liệu: mở đầu bằng các hệ số thực nghiệm, sau đó đề xuất các giải pháp khả thi theo đúng 3 nhóm chủ thể (Sinh viên; Nhà trường & Đoàn thanh niên; Cơ quan quản lý & Fintech BNPL)."

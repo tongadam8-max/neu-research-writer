@@ -69,20 +69,22 @@ neu-research-writer/
 
 ## 5. Bộ câu lệnh mẫu (Prompt Templates)
 
-- **Viết Phần Mở đầu:**
-  > "Áp dụng `SKILL.md` và `references/01-intro-and-gap.md` dựa trên `project-context.md`. Hãy viết toàn văn Phần Mở đầu theo đúng Outline mới của bài báo cáo và văn phong học thuật NEU, triển khai sâu lập luận thực tiễn và lý luận."
+> *Lưu ý: Tên chương và số thứ tự mục (`x.x`) tự động bám sát theo Outline đã khai báo trong `project-context.md` (hỗ trợ hoàn hảo cả bố cục 4 chương lẫn 5 chương).*
 
-- **Viết từng mục Chương Lý thuyết & Tổng quan:**
-  > "Áp dụng `SKILL.md` và `references/02-literature-and-hypotheses.md` dựa trên `project-context.md`. Hãy viết toàn văn Mục 1.1 (Tổng quan nghiên cứu) chỉ sử dụng các nguồn trong Kho tài liệu tham khảo đã xác thực và các tóm tắt bài báo sau đây: [Dán ghi chú bài báo]."
+- **Viết Phần Mở đầu / Chương 1 (Giới thiệu):**
+  > "Áp dụng `SKILL.md` và `references/01-intro-and-gap.md` dựa trên `project-context.md`. Hãy viết toàn văn Phần Mở đầu / Chương Giới thiệu theo đúng Outline của đề tài và chuẩn văn phong học thuật NEU, triển khai sâu lập luận thực tiễn và khoảng trống lý luận."
 
-- **Viết Chương Phương pháp:**
-  > "Áp dụng `SKILL.md`, `references/03-methodology.md` và `references/methods/survey-sem-guide.md`. Hãy viết toàn văn Mục 2.4 (Phương pháp xử lý dữ liệu), đảm bảo khóa đủ các ngưỡng kiểm định cho mô hình đo lường và cấu trúc, đồng thời nêu rõ quy tắc xử lý biến kiểm soát đơn mục."
+- **Viết từng mục Chương Tổng quan & Lý thuyết:**
+  > "Áp dụng `SKILL.md` và `references/02-literature-and-hypotheses.md` dựa trên `project-context.md`. Hãy viết toàn văn Mục [Điền mã mục, ví dụ: 1.1 hoặc 2.1 - Tổng quan nghiên cứu] chỉ sử dụng các nguồn trong Kho tài liệu tham khảo đã xác thực và các tóm tắt bài báo sau đây: [Dán ghi chú bài báo]."
 
-- **Viết Chương Kết quả từ số liệu phần mềm:**
-  > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` (chế độ Tách riêng Kết quả thuần túy) và `references/methods/survey-sem-guide.md`. Dựa trên bảng xuất SmartPLS dưới đây, hãy chuẩn hóa bảng biểu và viết toàn văn Mục 3.2 và 3.3. Tuyệt đối chỉ dùng số liệu tôi cung cấp: [Dán bảng số liệu]."
+- **Viết Chương Phương pháp nghiên cứu:**
+  > "Áp dụng `SKILL.md`, `references/03-methodology.md` và `references/methods/survey-sem-guide.md`. Hãy viết toàn văn Mục [Điền mã mục, ví dụ: 2.4 hoặc 3.4 - Phương pháp xử lý dữ liệu], đảm bảo khóa đủ các ngưỡng kiểm định cho mô hình đo lường và cấu trúc, đồng thời nêu rõ quy tắc xử lý biến kiểm soát đơn mục."
 
-- **Viết Chương Thảo luận & Khuyến nghị:**
-  > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` và `references/05-implications-and-conclusion.md` dựa trên `project-context.md` và `chapter-handoff.md`. Hãy viết toàn văn Mục 4.1 (Thảo luận đối chiếu nghiên cứu trước) và Mục 4.2 (Hệ thống khuyến nghị neo số liệu cho các chủ thể đã chốt)."
+- **Viết Chương Kết quả nghiên cứu từ số liệu phần mềm:**
+  > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` (chế độ Tách riêng Kết quả thuần túy) và `references/methods/survey-sem-guide.md`. Dựa trên bảng xuất SmartPLS/SPSS dưới đây, hãy chuẩn hóa bảng biểu và viết toàn văn Mục [Điền mã mục, ví dụ: 3.2 & 3.3 hoặc 4.2 & 4.3]. Tuyệt đối chỉ dùng số liệu tôi cung cấp: [Dán bảng số liệu]."
+
+- **Viết Chương Thảo luận & Khuyến nghị / Hàm ý quản trị:**
+  > "Áp dụng `SKILL.md`, `references/04-results-and-discussion.md` và `references/05-implications-and-conclusion.md` dựa trên `project-context.md` và `chapter-handoff.md`. Hãy viết toàn văn Mục [Điền mã mục, ví dụ: 4.1 & 4.2 hoặc 4.4 & 5.3] (Thảo luận đối chiếu nghiên cứu trước và Hệ thống khuyến nghị neo số liệu cho các chủ thể đã chốt)."
 
 
 ## 6. Nguyên tắc linh hoạt khi có dữ liệu thật & ý tưởng mới (Cơ chế 2 tầng)

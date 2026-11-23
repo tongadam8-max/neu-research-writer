@@ -14,7 +14,7 @@
 - **KHÔNG** viết kiểu mỗi đoạn văn bắt đầu rập khuôn bằng *"Nghiên cứu của A (2020) cho thấy... Nghiên cứu của B (2021) cho thấy..."*.
 - **HÃY** tổ chức từng đoạn theo một **luận điểm trung tâm**:
   1. Câu chủ đề nêu quy luật/xu hướng chung được nhiều học giả ghi nhận.
-  2. Gom nhóm các tác giả cùng quan điểm trong cùng một mệnh đề trích dẫn, ví dụ: `(Tác giả A, 2022; Tác giả B & cộng sự, 2024)`.
+  2. Gom nhóm các tác giả cùng quan điểm trong cùng một mệnh đề trích dẫn, ví dụ: `(Tác giả A, 2022; Tác giả B và cộng sự, 2024)`.
   3. Chọn 1-2 công trình tiêu biểu nhất để phân tích sâu bối cảnh mẫu, phương pháp và phát hiện cụ thể.
   4. **Làm nổi bật tranh luận / mâu thuẫn học thuật** (nếu có): Dùng các từ nối học thuật sắc bén (*"Tuy nhiên, trái ngược với dòng nghiên cứu trên..."*, *"Nghịch lý thực nghiệm này gợi mở rằng..."*) để tạo tiền đề tự nhiên cho mô hình của nhóm.
 - **Đoạn Tiểu kết (Synthesis):** Cuối mỗi hướng nghiên cứu lớn, viết 1 đoạn ngắn (3-4 câu) tóm tắt những điểm đã thống nhất và điểm còn bỏ ngỏ, dẫn mạch sang mục **Đánh giá chung và Khoảng trống nghiên cứu** (tham chiếu Ma trận 4 tầng tại `01-intro-and-gap.md`).
@@ -51,7 +51,7 @@ Với mỗi biến tiềm ẩn chính trong mô hình (`project-context.md`), tr
   `[CHÈN HÌNH x.x: Mô hình nghiên cứu đề xuất | Nguồn: Nhóm nghiên cứu đề xuất]`
 
 ### 4.2. Công thức 4 bước cho mỗi Giả thuyết trực tiếp hoặc trung gian
-Mỗi giả thuyết triển khai thành 1-2 đoạn văn sâu sắc (tối thiểu 150-250 từ cho báo cáo toàn văn):
+Mỗi giả thuyết triển khai thành 1-2 đoạn văn sâu sắc (dung lượng gợi ý 150-250 từ tùy thuộc vào độ phức tạp của cơ chế lý thuyết và bằng chứng thực nghiệm):
 1. **Định vị biến số:** Nhắc lại bản chất và thuộc tính nổi bật của biến tác động.
 2. **Cơ chế lý thuyết & Bằng chứng thực nghiệm:** Giải thích **TẠI SAO** biến A lại làm tăng/giảm biến B thông qua cơ chế của lý thuyết nền, kèm bằng chứng từ ít nhất 2-3 nghiên cứu trước trong kho tài liệu xác thực.
 3. **Liên hệ bối cảnh khách thể:** Gắn cơ chế đó với đặc điểm kinh tế, tâm lý hoặc công nghệ của nhóm đối tượng khảo sát tại địa bàn nghiên cứu.

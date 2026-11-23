@@ -13,6 +13,7 @@ def clean_latex_and_text(text):
         r'$\alpha$': 'α', r'$\rho$': 'ρ', r'$\rightarrow$': '→', r'$\times$': 'x',
         r'$N$': 'N', r'$100\%$': '100%', r'$\le$': '≤', r'$\ge$': '≥',
         r'\beta': 'β', r'\rightarrow': '→', r'\times': 'x', r'\alpha': 'α',
+        r'\%': '%',
         '—': '-'
     }
     for k, v in mapping.items():
@@ -88,6 +89,8 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                     # Bắt tiêu đề TÀI LIỆU THAM KHẢO
                     if "TÀI LIỆU THAM KHẢO" in raw_title.upper():
                         is_in_reference_section = True
+                        if len(doc.paragraphs) > 0:
+                            doc.add_page_break()
                         p = doc.add_paragraph(raw_title)
                         p.paragraph_format.alignment = WD_ALIGN_PARAGRAPH.CENTER
                         p.paragraph_format.first_line_indent = Cm(0)
@@ -98,6 +101,8 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                         continue
                         
                     level = int(element.name[1])
+                    if level == 1 and len(doc.paragraphs) > 0:
+                        doc.add_page_break()
                     heading = doc.add_heading(raw_title, level=level)
                     for run in heading.runs:
                         run.font.name = 'Times New Roman'
@@ -116,8 +121,10 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                         raw_lines = clean_latex_and_text(element.text).split('\n')
 
                     for line in raw_lines:
-                        # Gỡ bỏ các số thứ tự hoặc gạch ngang cũ do AI tự sinh
-                        line = re.sub(r'^\s*[-•\d\.]+\s*', '', line)
+                        # Chỉ gỡ bỏ ký tự gạch đầu dòng/chấm tròn bullet
+                        line = re.sub(r'^\s*[-•]\s*', '', line)
+                        # Chỉ gỡ bỏ tiền tố đánh số thứ tự danh sách (ví dụ: '1. ', '1.1. ', '1.1.1. ')
+                        line = re.sub(r'^\s*\d+(\.\d+)*\.\s+', '', line)
                         line = line.strip()
                         
                         if not line: continue
@@ -157,8 +164,6 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                                 for paragraph in tc.paragraphs:
                                     for run in paragraph.runs:
                                         run.font.bold = True
-                                        
-            doc.add_page_break()
 
     doc.save(output_file)
     print(f"Đã xuất thành công báo cáo chuẩn NEU ra file: {output_file}")

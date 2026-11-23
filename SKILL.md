@@ -28,21 +28,21 @@ Write cohesive, publication-grade Vietnamese academic chapters for full-text res
 
 Load only the reference files required for the user's current target section to keep reasoning sharp:
 
-| Target Section Requested | Primary Reference File(s) to Load |
+| Mục tiêu / Phân đoạn cần viết (Target Section Requested) | Primary Reference File(s) to Load |
 | :--- | :--- |
-| Dựng Outline / Cấu trúc Báo cáo toàn văn | `references/00-outline-architect.md` |
-| Opening / Introduction / Research Gaps | `references/01-intro-and-gap.md` |
-| Literature Review / Concepts / Theory / Hypotheses | `references/02-literature-and-hypotheses.md` |
-| Methodology / Scales / Sampling / Data Analysis | `references/03-methodology.md` + `references/methods/survey-sem-guide.md` |
-| Empirical Results / Model Testing | `references/04-results-and-discussion.md` + `references/methods/survey-sem-guide.md` |
-| Discussion of Findings | `references/04-results-and-discussion.md` |
-| Policy & Managerial Implications / Limitations / Conclusion | `references/05-implications-and-conclusion.md` |
-| Lập Ma trận & Trích xuất Tóm tắt Bài báo | `references/06-literature-matrix-extractor.md` |
-| Rà soát Trích dẫn, Danh mục Tài liệu tham khảo & Phụ lục | `references/07-citations-and-appendices.md` |
-| Ghép file, Giảm Turnitin & Paraphrase | `references/08-merge-and-paraphrase.md` |
-| Ôn tập & Giả lập Hội đồng Bảo vệ | `references/09-defense-and-viva-prep.md` |
-| Xuất Báo cáo toàn văn ra Word (.docx chuẩn NEU) | Thực thi `python scripts/export_to_docx.py <thư mục drafts>` |
-| Review / Edit / Merge Chapters | `checklists/chapter-qa-gate.md` |
+| Dựng Outline / Cấu trúc Báo cáo toàn văn (Outline Architect) | `references/00-outline-architect.md` |
+| Phần Mở đầu / Giới thiệu đề tài / Khoảng trống (Opening / Introduction / Research Gaps) | `references/01-intro-and-gap.md` |
+| Tổng quan nghiên cứu / Cơ sở lý thuyết / Giả thuyết (Literature Review / Concepts / Theory / Hypotheses) | `references/02-literature-and-hypotheses.md` |
+| Phương pháp nghiên cứu / Thang đo / Cỡ mẫu / Phân tích (Methodology / Scales / Sampling / Data Analysis) | `references/03-methodology.md` + `references/methods/survey-sem-guide.md` |
+| Kết quả nghiên cứu / Kiểm định mô hình PLS/CB-SEM (Empirical Results / Model Testing) | `references/04-results-and-discussion.md` + `references/methods/survey-sem-guide.md` |
+| Thảo luận kết quả thực nghiệm (Discussion of Findings) | `references/04-results-and-discussion.md` |
+| Hệ thống Khuyến nghị / Hàm ý / Hạn chế / Kết luận (Policy & Managerial Implications / Limitations / Conclusion) | `references/05-implications-and-conclusion.md` |
+| Lập Ma trận & Trích xuất Tóm tắt Bài báo (Literature Matrix Extractor) | `references/06-literature-matrix-extractor.md` |
+| Rà soát Trích dẫn APA 7th, Danh mục Tham khảo & Phụ lục (Citations & Appendices) | `references/07-citations-and-appendices.md` |
+| Ghép file, Giảm Turnitin & Paraphrase (Merge & Paraphrase) | `references/08-merge-and-paraphrase.md` |
+| Giả lập Phản biện & Ôn luyện Hội đồng bảo vệ (Defense & Viva Prep) | `references/09-defense-and-viva-prep.md` |
+| Tự kiểm định chất lượng bản thảo 2 vòng (Review / Edit / Merge Chapters) | `checklists/chapter-qa-gate.md` |
+| Xuất Báo cáo toàn văn ra Word chuẩn NEU (Export to Word Document) | Thực thi `python scripts/export_to_docx.py <thư mục drafts>` |
 
 ## Governance Hierarchy: Strict Standards vs. Adaptive Freedom
 

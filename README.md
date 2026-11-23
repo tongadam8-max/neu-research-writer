@@ -66,20 +66,20 @@ neu-research-writer/
 
 Toàn bộ nhóm vận hành trên GitHub repository `tongadam8-max/neu-research-writer` với **nhánh mặc định là `BNPL-gr19`**. Mỗi thành viên sở hữu 01 nhánh độc lập (nhiệm vụ cụ thể do nhóm họp thống nhất và phân công sau):
 
-| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ phân công |
+| STT | Thành viên | Nhánh (Branch) | Nhiệm vụ chính được phân công |
 | :---: | :--- | :---: | :--- |
-| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | *[Chờ nhóm họp phân công]* |
-| 2 | **Vũ Anh Khôi** | `khoi` | *[Chờ nhóm họp phân công]* |
-| 3 | **Doãn Quỳnh Anh** | `qanh` | *[Chờ nhóm họp phân công]* |
-| 4 | **Võ Thái Lâm** | `lam` | *[Chờ nhóm họp phân công]* |
-| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | *[Chờ nhóm họp phân công]* |
+| 1 | **Tống Gia Bảo** (Trưởng nhóm) | `bao` | Điều phối chung, duyệt PR, Chương 1 & Phụ lục |
+| 2 | **Vũ Anh Khôi** | `khoi` | Chương 2: Cơ sở lý thuyết & Phát triển giả thuyết |
+| 3 | **Doãn Quỳnh Anh** | `qanh` | Chương 3: Phương pháp nghiên cứu & Thang đo |
+| 4 | **Võ Thái Lâm** | `lam` | Chương 4: Kết quả xử lý SmartPLS 4 / SPSS 27 |
+| 5 | **Nguyễn Thái Phương Trinh** | `trinh` | Chương 4 (Thảo luận) & Chương 5: Khuyến nghị, Kết luận |
 
 ---
 
 ## 4. Hướng dẫn quy trình làm việc cho từng thành viên
 
 ### Bước 1: Kéo code và chuyển về nhánh cá nhân
-Trước khi bắt đầu viết, mở Terminal (PowerShell / Git Bash) tại thư mục dự án:
+Trước khi bắt đầu viết, bạn mở Terminal (PowerShell hoặc Git Bash) ngay tại thư mục dự án `neu-research-writer` và chạy:
 ```bash
 git fetch origin
 git checkout <tên_nhánh_của_bạn>
@@ -88,19 +88,31 @@ git pull origin <tên_nhánh_của_bạn>
 ```
 
 ### Bước 2: Triển khai viết bản thảo cùng AI
-Bạn có thể sử dụng AI Agent (Antigravity, Cursor, Windsurf, Claude Code) hoặc bản Web (Gemini / ChatGPT):
-- **Nếu dùng AI Agent trong IDE:** Chỉ thị cho AI đọc `templates/project-context.md` và viết trực tiếp vào file tương ứng trong thư mục `drafts/` (ví dụ: `drafts/02-2.1-Cac-khai-niem-co-ban.md`).
-- **Nếu dùng Web (ChatGPT / Claude / Gemini):** Đính kèm các file:
-  1. `SKILL.md` (Bộ quy tắc bắt buộc)
-  2. `templates/project-context.md` (Bối cảnh đề tài, thang đo, 27 trích dẫn)
-  3. `references/<module_tương_ứng>.md`
-  4. Bảng số liệu hoặc tóm tắt tài liệu của bạn (nếu viết Chương 4 hoặc Chương 2).
+Thành viên có thể linh hoạt chọn **1 trong 2 cách đơn giản** dưới đây (không cần sử dụng giao diện IDE lập trình phức tạp):
+
+- **Cách 1: Sử dụng Google Antigravity (Khuyên dùng - Đơn giản nhất):**
+  1. Mở ứng dụng Antigravity trên máy tính và mở thư mục dự án `neu-research-writer`.
+  2. Tại khung chat, bạn chỉ cần sao chép câu lệnh mẫu ở **Mục 6** hoặc ra lệnh trực tiếp cho AI viết nội dung được phân công (ví dụ: *"Dựa trên templates/project-context.md và references/02-literature-and-hypotheses.md, hãy viết hoàn thiện mục 2.1 Các khái niệm cơ bản vào drafts/02-2.1-Cac-khai-niem-co-ban.md"*).
+  3. AI sẽ tự động đọc toàn bộ quy chuẩn học thuật trong `SKILL.md` và viết thẳng bản thảo chuẩn chỉnh vào file tương ứng trong thư mục `drafts/` của bạn.
+
+- **Cách 2: Sử dụng trên Web (Gemini / ChatGPT trên trình duyệt):**
+  1. Mở cửa sổ chat mới trên trình duyệt web (Gemini hoặc ChatGPT).
+  2. Đính kèm (tải lên) 4 file tài liệu sau để AI có đầy đủ dữ liệu:
+     - `SKILL.md` (Bộ quy tắc bắt buộc về phong cách học thuật và chuẩn kiểm định).
+     - `templates/project-context.md` (Khung bối cảnh đề tài, mô hình nghiên cứu, thang đo và 27 tài liệu tham khảo đã xác thực).
+     - File hướng dẫn nghiệp vụ tương ứng trong thư mục `references/` (Ví dụ: Khôi viết Chương 2 thì đính kèm `references/02-literature-and-hypotheses.md`; Quỳnh Anh viết Chương 3 đính kèm `references/03-methodology.md`).
+     - Bảng số liệu xuất từ phần mềm hoặc tóm tắt nghiên cứu (nếu làm Chương 4 hoặc Chương 2).
+  3. Sau khi AI tạo xong văn bản, bạn sao chép toàn bộ nội dung và dán vào file `.md` tương ứng trong thư mục `drafts/`.
 
 ### Bước 3: Kiểm tra chất lượng trước khi nộp
-Mọi đoạn văn trước khi lưu vào `drafts/` bắt buộc phải vượt qua bộ lọc tại `checklists/chapter-qa-gate.md`:
-- [x] Không gạch đầu dòng (-) trong thân bài; viết đoạn văn học thuật hoàn chỉnh dùng từ nối `Thứ nhất, Thứ hai...`.
-- [x] Không bịa trích dẫn (chỉ dùng trong 27 nguồn đã xác thực hoặc Hair et al., Cohen).
-- [x] Không bọc ngoặc kép vào các thuật ngữ như Mua trước trả sau, Hiểu biết tài chính, Mua sắm bốc đồng.
+Mọi đoạn văn trước khi lưu vào `drafts/` bắt buộc phải vượt qua bộ lọc chất lượng tại `checklists/chapter-qa-gate.md`:
+- [x] **Kiểm soát nguồn trích dẫn & Chống bịa tài liệu:** Ưu tiên sử dụng 27 nguồn đã xác thực trong `templates/project-context.md` và các chuẩn phương pháp quốc tế (Hair et al., Cohen). **Việc bổ sung thêm nguồn trích dẫn mới là hoàn toàn được phép**, nhưng bắt buộc phải:
+  - **Được Trưởng nhóm phê duyệt**, HOẶC
+  - **Thành viên khi viết phải tự kiểm tra, đối chiếu kỹ lưỡng thông tin nguồn mới** (tên tác giả, năm xuất bản, tên bài báo, tạp chí/nhà xuất bản và kết quả thực nghiệm) trước khi đưa vào bài.
+  - Tuyệt đối không để AI tự ý suy diễn hoặc bịa nguồn tham khảo.
+- [x] **Văn phong học thuật & Định dạng chuẩn:** Không gạch đầu dòng (-) hoặc chấm tròn (•) trong thân bài; viết thành các đoạn văn học thuật hoàn chỉnh có câu chủ đề và từ nối chuyển ý mượt mà (`Thứ nhất, Thứ hai...`).
+- [x] **Quy tắc dấu câu & Thuật ngữ:** Không bọc ngoặc kép ("...", “...”) vào các thuật ngữ chuyên ngành (như Mua trước trả sau, Hiểu biết tài chính, Mua sắm bốc đồng).
+- [x] **Zero Number Drift (Khớp số liệu tuyệt đối):** Mọi con số (cỡ mẫu $N$, tỷ lệ %, hệ số hồi quy, $p$-value...) trong đoạn văn phải khớp 100% với bảng số liệu thực nghiệm.
 
 ### Bước 4: Lưu thay đổi và đẩy lên GitHub
 Sau khi hoàn thành phần viết của mình:

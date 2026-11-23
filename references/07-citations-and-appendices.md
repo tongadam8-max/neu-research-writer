@@ -2,6 +2,8 @@
 
 **Mục đích:** Khóa cứng luật trích dẫn trong thân bài và danh mục tài liệu tham khảo để không phải dùng phần mềm thứ ba (Zotero/Mendeley) khi ghép bài.
 
+> **Quy định bổ sung tài liệu mới:** Nhóm ưu tiên sử dụng 27 nguồn đã xác thực trong `templates/project-context.md`. Thành viên hoàn toàn được phép bổ sung tài liệu mới nhưng bắt buộc phải được Trưởng nhóm duyệt HOẶC thành viên tự đối chiếu, kiểm tra kỹ lưỡng nguồn (tác giả, năm, tên bài, tạp chí, kết quả thực nghiệm) trước khi đưa vào bài. Tuyệt đối không để AI tự ý suy diễn hoặc bịa nguồn trích dẫn.
+
 ## 1. Luật trích dẫn trong văn bản (In-text Citation)
 - **Tác giả người Việt:** Giữ nguyên [Họ và Tên]. (Ví dụ: `Nguyễn Văn A (2023)` hoặc `(Nguyễn Văn A, 2023)`). Tuyệt đối không đảo thành `A, N. V.`.
 - **Tác giả quốc tế:** Dùng [Họ]. (Ví dụ: `Smith (2023)` hoặc `(Smith, 2023)`).

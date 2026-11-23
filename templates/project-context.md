@@ -242,7 +242,7 @@ Mô hình nghiên cứu bao gồm **15 biến quan sát** thuộc **03 khái ni�
 
 ## 7. Kho Tài liệu tham khảo đã xác thực (Verified Reference Bank - APA 7th)
 
-> AI chỉ được phép trích dẫn các nguồn nằm trong danh sách dưới đây (hoặc nguồn mới do thành viên cung cấp trực tiếp trong phiên chat). Riêng các tài liệu phương pháp luận kinh điển đã chuẩn hóa trong `references/methods/survey-sem-guide.md` (như Hair et al., 2019, 2021; Cohen, 1988) được mặc định công nhận hợp lệ cho việc viện dẫn các ngưỡng kỹ thuật phân tích.
+> AI chỉ được phép trích dẫn các nguồn nằm trong danh sách dưới đây, các tài liệu phương pháp luận kinh điển đã chuẩn hóa trong `references/methods/survey-sem-guide.md` (như Hair et al., 2019, 2021; Cohen, 1988), hoặc nguồn mới do thành viên bổ sung (với điều kiện đã được Trưởng nhóm duyệt hoặc thành viên tự đối chiếu, kiểm tra kỹ lưỡng trước khi đưa vào bài). Tuyệt đối cấm AI tự ý bịa trích dẫn.
 
 1. `Aisjah (2024)`: Aisjah, S. (2024). Intention to use buy-now-pay-later payment system among university students: A combination of financial parenting, financial self-efficacy, and social media intensity. *Cogent Social Sciences*, *10*(1), 2306705. https://doi.org/10.1080/23311886.2024.2306705
 2. `Ashby et al. (2025)`: Ashby, R., Sharifi, S., Yao, J., & Ang, L. (2025). The influence of the buy-now-pay-later payment mode on consumer spending decisions. *Journal of Retailing*, *101*(1), 103-119. https://doi.org/10.1016/j.jretai.2025.01.003

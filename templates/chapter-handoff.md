@@ -1,12 +1,12 @@
 # PHIẾU BÀN GIAO DỮ LIỆU & MẠCH LẬP LUẬN GIỮA CÁC CHƯƠNG (CHAPTER HANDOFF)
 
-> **Hướng dẫn:** Thành viên phụ trách chương trước (đặc biệt là **Chương Phương pháp** và **Chương Kết quả**) cập nhật file này ngay khi hoàn thành số liệu/bản thảo. Thành viên viết **Chương Thảo luận, Khuyến nghị và Kết luận** bắt buộc nạp file này cùng `project-context.md` để AI viết chính xác 100% theo dữ liệu thực tế.
+> **Hướng dẫn:** Thành viên phụ trách chương trước (đặc biệt là **Chương Phương pháp** và **Chương Kết quả**) cập nhật file này ngay khi hoàn thành số liệu/bản thảo. Thành viên viết **Chương Thảo luận, Khuyến nghị và Kết luận** bắt buộc nạp file này cùng `templates/project-context.md` để AI viết chính xác 100% theo dữ liệu thực tế.
 
 ---
 
 ## 1. Trạng thái tiến độ các chương
 
-*(Lưu ý: Danh số chương bên dưới tự động điều chỉnh theo đúng Outline 4 chương hoặc 5 chương đã khai báo trong `project-context.md`)*
+*(Lưu ý: Danh số chương bên dưới tự động điều chỉnh theo đúng Outline 4 chương hoặc 5 chương đã khai báo trong `templates/project-context.md`)*
 
 | Chương / Phần | Người phụ trách | Trạng thái (`Đang viết` / `Đã xong` / `Đã duyệt`) | Ghi chú chính |
 | :--- | :--- | :--- | :--- |

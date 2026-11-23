@@ -2,8 +2,8 @@
 
 Áp dụng module này khi viết **Chương Kết quả nghiên cứu** và **Mục Thảo luận kết quả**.
 
-> **Kiểm tra chế độ bố cục trong `project-context.md` trước khi viết:**
-> - **Bố cục báo cáo (4 chương hay 5 chương):** Tuân thủ tuyệt đối danh số và tên chương trong Outline tại Mục 3 của `project-context.md` (không gắn cứng số chương mặc định).
+> **Kiểm tra chế độ bố cục trong `templates/project-context.md` trước khi viết:**
+> - **Bố cục báo cáo (4 chương hay 5 chương):** Tuân thủ tuyệt đối danh số và tên chương trong Outline tại Mục 3 của `templates/project-context.md` (không gắn cứng số chương mặc định).
 > - **Phân định rõ Kết quả và Thảo luận khi Chương Kết quả & Thảo luận gộp chung:** Dù tiêu đề chương là gộp ("Kết quả nghiên cứu và Thảo luận"), bài nghiên cứu tuân thủ cấu trúc phân tầng tiểu mục rõ rệt:
 >   - **Các tiểu mục báo cáo kết quả (ví dụ 4.1, 4.2, 4.3):** Báo cáo kết quả thực nghiệm thuần túy (Thống kê mô tả mẫu & thực trạng, Đánh giá mô hình đo lường, Đánh giá mô hình cấu trúc & Kiểm định giả thuyết, đồ thị tương tác). Diễn giải ngắn gọn ý nghĩa thống kê; tuyệt đối không mở rộng thảo luận học thuật lan man tại đây.
 >   - **Tiểu mục Thảo luận kết quả nghiên cứu (ví dụ 4.4):** Dành trọn vẹn cho việc liên hệ sâu với các lý thuyết nền và đối chiếu với các công trình nghiên cứu trước (trong nước và quốc tế). Không lặp lại các phân tích này ở phần báo cáo số liệu thực nghiệm.

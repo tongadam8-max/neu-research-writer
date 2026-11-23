@@ -2,12 +2,14 @@
 
 Áp dụng module này khi viết **Chương Cơ sở lý thuyết và Tổng quan nghiên cứu** (Chương 1 trong bố cục 4 chương hoặc kết hợp Chương 1.1 & Chương 2 trong bố cục 5 chương).
 
+> **Lưu ý điều phối cấu trúc 5 chương (Tránh trùng lặp nội dung):** Nếu đề tài vận hành theo bố cục 5 chương chuẩn NEU và đã bố trí tiểu mục Tổng quan nghiên cứu tại Chương 1 (Mục 1.1), AI BỎ QUA Mục 1 của tài liệu này khi viết Chương 2, bắt đầu viết thẳng từ **Mục 2: Quy trình viết Cơ sở lý thuyết nền tảng** và **Mục 3: Khái niệm cơ bản** để tránh lặp lại nội dung đã viết.
+
 ---
 
 ## 1. Quy chuẩn viết Tổng quan nghiên cứu (Thematic 2D Synthesis)
 
 ### Nguyên tắc tổ chức Ma trận 2 chiều
-- **Trục 1 (Theo luồng nội dung / Mối quan hệ cốt lõi):** Chia phần tổng quan thành các tiểu mục ứng với từng hướng nghiên cứu chính đã khai báo trong Outline báo cáo tại `project-context.md` (ví dụ: Hướng 1 về mối quan hệ X-Y; Hướng 2 về bối cảnh khách thể mục tiêu; Hướng 3 về vai trò biến trung gian/điều tiết).
+- **Trục 1 (Theo luồng nội dung / Mối quan hệ cốt lõi):** Chia phần tổng quan thành các tiểu mục ứng với từng hướng nghiên cứu chính đã khai báo trong Outline báo cáo tại `templates/project-context.md` (ví dụ: Hướng 1 về mối quan hệ X-Y; Hướng 2 về bối cảnh khách thể mục tiêu; Hướng 3 về vai trò biến trung gian/điều tiết).
 - **Trục 2 (Quốc tế -> Trong nước):** Trong mỗi hướng nghiên cứu (hoặc tách tiểu mục riêng theo Outline báo cáo), đi từ dòng chảy nghiên cứu quốc tế đến các bằng chứng thực nghiệm tại Việt Nam.
 
 ### Kỹ thuật Tổng hợp theo luồng lập luận (Thay thế kiểu liệt kê)
@@ -23,7 +25,7 @@
 
 ## 2. Quy trình viết Cơ sở lý thuyết nền tảng (Theory Justification)
 
-Không chép lại định nghĩa sách giáo khoa một cách rời rạc. Với mỗi lý thuyết nền trong `project-context.md`, triển khai chặt chẽ theo 4 lớp:
+Không chép lại định nghĩa sách giáo khoa một cách rời rạc. Với mỗi lý thuyết nền trong `templates/project-context.md`, triển khai chặt chẽ theo 4 lớp:
 
 1. **Nguồn gốc & Định vị lý thuyết:** Tên đầy đủ (Tiếng Việt + Tiếng Anh trong ngoặc), tác giả sáng lập, năm công bố và lĩnh vực học thuật gốc.
 2. **Các trụ cột / Cơ chế cốt lõi:** Giải thích gãy gọn 2-3 luận điểm nền tảng của lý thuyết (có thể chia tiểu ý `(a), (b), (c)` mạch lạc).
@@ -36,7 +38,7 @@ Không chép lại định nghĩa sách giáo khoa một cách rời rạc. Vớ
 
 ## 3. Quy trình định nghĩa Khái niệm nghiên cứu (3 bước)
 
-Với mỗi biến tiềm ẩn chính trong mô hình (`project-context.md`), triển khai theo 3 bước mặc định (tác giả có thể linh hoạt mở rộng theo mạch lập luận):
+Với mỗi biến tiềm ẩn chính trong mô hình (`templates/project-context.md`), triển khai theo 3 bước mặc định (tác giả có thể linh hoạt mở rộng theo mạch lập luận):
 1. **Dòng chảy khái niệm học thuật:** Trình bày 2-3 định nghĩa kinh điển và hiện đại từ các nguồn đã xác thực, cho thấy sự tiến hóa hoặc góc nhìn đa chiều của khái niệm.
 2. **Phân tách cấu phần (nếu có):** Làm rõ các khía cạnh đo lường chính của khái niệm (tần suất, cường độ, nhận thức, kỹ năng, hành vi...).
 3. **Tuyên bố khái niệm thao tác (Operational Definition):** Chốt rõ: *"Kế thừa quan điểm của [Tác giả], trong phạm vi nghiên cứu này, [Tên biến] được xác định là..."*. Nếu thuật ngữ tiếng Việt dễ gây hiểu nhầm sắc thái cảm tính, bổ sung 1 câu ghi chú làm rõ tính trung tính học thuật của thuật ngữ.
@@ -65,7 +67,7 @@ Mỗi giả thuyết triển khai thành 1-2 đoạn văn sâu sắc (dung lư�
 3. Chốt tuyên bố phương pháp: Đặt giả thuyết kỳ vọng chính đồng thời chỉ rõ đề tài sử dụng **kiểm định hai phía (two-tailed)** để kiểm chứng khách quan cả hai chiều hướng trong bối cảnh thực địa.
 
 ### 4.4. Lập luận cho Các biến kiểm soát (Control Variables)
-Nếu mô hình có biến kiểm soát trong `project-context.md`, viết riêng 1 tiểu mục ngắn giải trình:
+Nếu mô hình có biến kiểm soát trong `templates/project-context.md`, viết riêng 1 tiểu mục ngắn giải trình:
 - **Lý do đưa vào mô hình:** Tách bạch tác động thuần túy của biến độc lập, kiểm soát yếu tố gây nhiễu (dẫn nguồn các nghiên cứu trước cũng kiểm soát các biến này).
 - **Cách đo lường & Mã hóa:** Nêu rõ từng biến là biến giả (0/1) hay thang đo thứ bậc.
 - **Lưu ý phương pháp luận:** Khẳng định rõ các biến kiểm soát đo lường đơn mục (single-item) không áp dụng các tiêu chí đánh giá mô hình đo lường phản ánh.

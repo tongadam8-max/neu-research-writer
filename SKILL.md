@@ -34,9 +34,9 @@ Load only the reference files required for the user's current target section to 
 | Phần Mở đầu / Giới thiệu đề tài / Khoảng trống (Opening / Introduction / Research Gaps) | `references/01-intro-and-gap.md` *(kèm Mục 1 `references/02-literature-and-hypotheses.md` nếu viết mục 1.1 Tổng quan nghiên cứu)* |
 | Tổng quan nghiên cứu / Cơ sở lý thuyết / Giả thuyết (Literature Review / Concepts / Theory / Hypotheses) | `references/02-literature-and-hypotheses.md` |
 | Phương pháp nghiên cứu / Thang đo / Cỡ mẫu / Phân tích (Methodology / Scales / Sampling / Data Analysis) | `references/03-methodology.md` + `references/methods/survey-sem-guide.md` |
-| Kết quả nghiên cứu / Kiểm định mô hình PLS/CB-SEM (Empirical Results / Model Testing) | `references/04-results-and-discussion.md` + `references/methods/survey-sem-guide.md` |
-| Thảo luận kết quả thực nghiệm (Discussion of Findings) | `references/04-results-and-discussion.md` |
-| Hệ thống Khuyến nghị / Hàm ý / Hạn chế / Kết luận (Policy & Managerial Implications / Limitations / Conclusion) | `references/05-implications-and-conclusion.md` |
+| Kết quả nghiên cứu / Kiểm định mô hình PLS/CB-SEM (Empirical Results / Model Testing) | `references/04-results-and-discussion.md` + `references/methods/survey-sem-guide.md` + `templates/chapter-handoff.md` |
+| Thảo luận kết quả thực nghiệm (Discussion of Findings) | `references/04-results-and-discussion.md` + `templates/chapter-handoff.md` |
+| Hệ thống Khuyến nghị / Hàm ý / Hạn chế / Kết luận (Policy & Managerial Implications / Limitations / Conclusion) | `references/05-implications-and-conclusion.md` + `templates/chapter-handoff.md` |
 | Lập Ma trận & Trích xuất Tóm tắt Bài báo (Literature Matrix Extractor) | `references/06-literature-matrix-extractor.md` |
 | Rà soát Trích dẫn APA 7th, Danh mục Tham khảo & Phụ lục (Citations & Appendices) | `references/07-citations-and-appendices.md` |
 | Ghép file, Giảm Turnitin & Paraphrase (Merge & Paraphrase) | `references/08-merge-and-paraphrase.md` |
@@ -51,7 +51,7 @@ This skill separates **hard scientific standards** (always enforced) from **adap
 ### Tier 1: Non-Negotiable Scientific Standards (Always Enforced)
 
 1. **Zero-Hallucination Guardrails:**
-   - **Citations:** Cite works in `project-context.md`, pre-approved methodological benchmark references from `references/methods/survey-sem-guide.md` (such as Hair et al., Cohen, Fornell & Larcker, Henseler et al., Hu & Bentler), or new verified sources. The addition of new references is fully permitted, provided that each new source is either **pre-approved by the Team Leader OR thoroughly checked and verified by the drafting member** (authors, publication year, paper title, journal name, and empirical findings) before inclusion. Never let AI fabricate or hallucinate references. If an empirical claim lacks backing, insert `[CẦN BỔ SUNG TRÍCH DẪN: mô tả luận điểm cần tìm nguồn]` instead of inventing a reference.
+   - **Citations:** Cite works in `templates/project-context.md`, pre-approved methodological benchmark references from `references/methods/survey-sem-guide.md` (such as Hair et al., Cohen, Fornell & Larcker, Henseler et al., Hu & Bentler), or new verified sources. The addition of new references is fully permitted, provided that each new source is either **pre-approved by the Team Leader OR thoroughly checked and verified by the drafting member** (authors, publication year, paper title, journal name, and empirical findings) before inclusion. Never let AI fabricate or hallucinate references. If an empirical claim lacks backing, insert `[CẦN BỔ SUNG TRÍCH DẪN: mô tả luận điểm cần tìm nguồn]` instead of inventing a reference.
    - **Statistics:** Report only real numerical values from actual software outputs provided by the user. Never fabricate placeholder numbers; use `[CHỜ SỐ LIỆU TỪ PHẦN MỀM]` when analysis is pending.
    - **Zero Number Drift:** Every count, percentage, coefficient, and p-value in prose must match its corresponding table 100%.
 
@@ -63,15 +63,15 @@ This skill separates **hard scientific standards** (always enforced) from **adap
 
 3. **Academic Prose & Formal NEU Standards:**
    - Write complete, cohesive academic paragraphs (never slide-deck bullet summaries for analytical prose).
-   - Keep objective third-person voice consistent ("nhóm tác giả", "nhóm nghiên cứu", "nghiên cứu này") unless explicitly overridden in `project-context.md`. Avoid emotional, repetitive, or journalistic phrasing.
+   - Keep objective third-person voice consistent ("nhóm tác giả", "nhóm nghiên cứu", "nghiên cứu này") unless explicitly overridden in `templates/project-context.md`. Avoid emotional, repetitive, or journalistic phrasing.
    - Follow APA 7th in-text citation formatting and standard Table/Figure numbering (`Bảng x.y` above table, source below; `Hình x.y` and source below figure).
 
 ### Tier 2: Adaptive Freedom (Live-Data & Author Supremacy)
 
-1. **Live Data Overrides Initial Assumptions:** Because initial context files are often drafted before data collection, **actual software outputs always take precedence** over earlier proposal expectations (e.g., if an item is dropped, a construct splits, a hypothesis flips sign, or an extra robustness/MGA test is added). Never reject real empirical results just because they differ from `project-context.md`.
-2. **Open Integration of New Content & Literature:** Team members are fully encouraged to introduce new academic papers, fresh empirical evidence, stronger theoretical mechanisms, or newly discovered contextual facts at any stage, provided each new source is approved by the Team Leader or thoroughly verified by the member. Integrate them seamlessly into the narrative without requiring them to be pre-listed in `project-context.md`.
+1. **Live Data Overrides Initial Assumptions:** Because initial context files are often drafted before data collection, **actual software outputs always take precedence** over earlier proposal expectations (e.g., if an item is dropped, a construct splits, a hypothesis flips sign, or an extra robustness/MGA test is added). Never reject real empirical results just because they differ from `templates/project-context.md`.
+2. **Open Integration of New Content & Literature:** Team members are fully encouraged to introduce new academic papers, fresh empirical evidence, stronger theoretical mechanisms, or newly discovered contextual facts at any stage, provided each new source is approved by the Team Leader or thoroughly verified by the member. Integrate them seamlessly into the narrative without requiring them to be pre-listed in `templates/project-context.md`.
 3. **Flexible Writing Patterns:** The step-by-step templates inside `references/` (such as 3-step concept definitions or 4-step hypothesis blocks) are **default scaffolding**, not rigid handcuffs. If a team member proposes a clearer narrative flow, a stronger analytical angle, or a better structure that preserves Tier 1 scientific rigor, adopt the member's preferred approach immediately.
-4. **Team Evolution Sync (Non-Blocking):** Whenever a member introduces new sources, modified variables, additional tests, or unexpected empirical results that diverge from the current `project-context.md`, proceed with writing normally and note the change in the closing Sync Alert.
+4. **Team Evolution Sync (Non-Blocking):** Whenever a member introduces new sources, modified variables, additional tests, or unexpected empirical results that diverge from the current `templates/project-context.md`, proceed with writing normally and note the change in the closing Sync Alert.
 
 ## Mandatory 2-Pass Self-Audit & Post-Write Protocol
 
@@ -98,5 +98,5 @@ At the end of every drafted section, append two brief blocks:
 - **Separate proposal structure from full-report outline:** Extract baseline parameters from proposal materials, but always follow the dedicated full-report outline in Section 3 of `templates/project-context.md` (or an updated outline supplied by the member).
 - **Do not hardcode chapter numbers:** Follow the exact chapter numbering declared by the team (4-chapter or 5-chapter layout).
 - **Do not merge Results and Discussion automatically:** Respect whether the team separates Results from Discussion or combines them.
-- **Never block legitimate research evolution:** Treat `project-context.md` as a living document, not a frozen contract.
+- **Never block legitimate research evolution:** Treat `templates/project-context.md` as a living document, not a frozen contract.
 - **Never fabricate audit feedback:** Both Pass 1/Pass 2 edits and the Focus Review must be strictly grounded in actual text defects or genuine analytical gaps.

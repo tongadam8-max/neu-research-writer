@@ -27,14 +27,15 @@ def clean_latex_and_text(text):
     text = re.sub(r'"([^"]*)"', r'“\1”', text)
     text = re.sub(r"(^|\s)'([^']*)'(?=\s|[.,;:!?]|$)", r'\1“\2”', text)
 
-    def unquote_short_phrases(match):
-        content = match.group(1)
-        word_count = len(content.split())
-        if word_count <= 6:
-            return content
-        return match.group(0)
+    # Chỉ gỡ bỏ ngoặc kép ở các thuật ngữ chuyên môn và ẩn dụ bị cấm theo QA Gate
+    banned_terms = [
+        r'Mua trước trả sau', r'Hiểu biết tài chính', r'Mua sắm bốc đồng',
+        r'chiếc phanh', r'chiếc phanh nhận thức', r'nỗi đau thanh toán',
+        r'không ma sát', r'hệ thống phản chiếu', r'hệ thống bốc đồng'
+    ]
+    for term in banned_terms:
+        text = re.sub(rf'[“"\'‘](?i:{term})[”"\'’]', lambda m: m.group(0)[1:-1], text)
 
-    text = re.sub(r'“([^”]+)”', unquote_short_phrases, text)
     return text.strip()
 
 def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
@@ -122,18 +123,22 @@ def create_neu_standard_doc(input_folder, output_file="BaoCaoTongKet.docx"):
                     raw_lines = []
                     if element.name in ['ul', 'ol']:
                         for li in element.find_all('li'):
-                            raw_lines.extend(clean_latex_and_text(li.text).split('\n'))
+                            li_text = clean_latex_and_text(li.text)
+                            for subline in li_text.split('\n'):
+                                # Gỡ bỏ ký tự gạch đầu dòng/bullet hoặc số thứ tự ở đầu list item
+                                subline = re.sub(r'^\s*[-•]\s*', '', subline)
+                                if not is_in_reference_section:
+                                    subline = re.sub(r'^\s*\d+[\.\)]\s+', '', subline)
+                                raw_lines.append(subline)
                     else:
-                        raw_lines = clean_latex_and_text(element.text).split('\n')
+                        for p_line in clean_latex_and_text(element.text).split('\n'):
+                            # Với thẻ đoạn văn thông thường (p), chỉ gỡ bỏ gạch đầu dòng bullet nếu có,
+                            # tuyệt đối KHÔNG xóa số đầu câu để tránh làm mất năm (như 2023.) hoặc số liệu.
+                            p_line = re.sub(r'^\s*[-•]\s*', '', p_line)
+                            raw_lines.append(p_line)
 
                     for line in raw_lines:
-                        # Chỉ gỡ bỏ ký tự gạch đầu dòng/chấm tròn bullet
-                        line = re.sub(r'^\s*[-•]\s*', '', line)
-                        # Chỉ gỡ bỏ tiền tố đánh số thứ tự danh sách nếu không phải trong phần tham khảo
-                        if not is_in_reference_section:
-                            line = re.sub(r'^\s*\d+(\.\d+)*\.\s+', '', line)
                         line = line.strip()
-                        
                         if not line: continue
                         
                         if "CHÈN HÌNH ẢNH ĐỒ THỊ" in line:

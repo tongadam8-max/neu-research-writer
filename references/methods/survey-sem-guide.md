@@ -1,6 +1,6 @@
 # CHUẨN KỸ THUẬT PHÂN TÍCH ĐỊNH LƯỢNG KHẢO SÁT (PLS-SEM & CB-SEM)
 
-Tài liệu tham chiếu kỹ thuật dùng khi viết **Chương Phương pháp** (`03-methodology.md`) và **Chương Kết quả** (`04-results-and-discussion.md`). Kiểm tra mục `Loại hình & Phương pháp chính` trong `project-context.md` để áp dụng đúng **Nhánh A (PLS-SEM)** hoặc **Nhánh B (CB-SEM)**.
+Tài liệu tham chiếu kỹ thuật dùng khi viết **Chương Phương pháp** (`03-methodology.md`) và **Chương Kết quả** (`04-results-and-discussion.md`). Kiểm tra mục `Loại hình & Phương pháp chính` trong `templates/project-context.md` để áp dụng đúng **Nhánh A (PLS-SEM)** hoặc **Nhánh B (CB-SEM)**.
 
 ---
 

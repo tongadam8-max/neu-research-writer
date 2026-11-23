@@ -2,14 +2,14 @@
 
 Áp dụng module này khi viết **Chương Phương pháp nghiên cứu** (Chương 2 trong bố cục 4 chương hoặc Chương 3 trong bố cục 5 chương). Chương này phải đạt độ minh bạch cao nhất để bất kỳ nhà nghiên cứu nào đọc lại đều có thể tái lập được quy trình khảo sát và phân tích.
 
-> **Yêu cầu phối hợp:** Luôn đọc kèm `references/methods/survey-sem-guide.md` để trích đúng bộ ngưỡng kiểm định thống kê theo phần mềm khai báo trong `project-context.md`.
+> **Yêu cầu phối hợp:** Luôn đọc kèm `references/methods/survey-sem-guide.md` để trích đúng bộ ngưỡng kiểm định thống kê theo phần mềm khai báo trong `templates/project-context.md`.
 
 ---
 
 ## 1. Thiết kế và Quy trình nghiên cứu
 
 - **Khẳng định thiết kế nghiên cứu:** Nêu rõ phương pháp chủ đạo (Định lượng / Hỗn hợp), bản chất dữ liệu (dữ liệu sơ cấp cắt ngang tại một thời điểm kết hợp dữ liệu thứ cấp phục vụ tổng quan).
-- **Mô tả tuần tự từng bước:** Trình bày chi tiết từng bước của quy trình nghiên cứu (ví dụ quy trình 6 bước hoặc 7 bước khớp tuyệt đối với `project-context.md`), mỗi bước giải thích rõ *Mục tiêu -> Công việc thực hiện -> Đầu ra chuyển sang bước tiếp theo*.
+- **Mô tả tuần tự từng bước:** Trình bày chi tiết từng bước của quy trình nghiên cứu (ví dụ quy trình 6 bước hoặc 7 bước khớp tuyệt đối với `templates/project-context.md`), mỗi bước giải thích rõ *Mục tiêu -> Công việc thực hiện -> Đầu ra chuyển sang bước tiếp theo*.
 - **Vị trí sơ đồ quy trình:**
   `[CHÈN HÌNH x.x: Sơ đồ quy trình nghiên cứu | Nguồn: Nhóm nghiên cứu tổng hợp]`
 
@@ -18,7 +18,7 @@
 ## 2. Xây dựng bảng hỏi, Hệ thống thang đo & Tiền kiểm định (Pilot / Định tính)
 
 ### 2.1. Cấu trúc bảng hỏi khảo sát
-Trình bày rõ tổng số câu hỏi và phân chia thành từng phần logic (khớp `project-context.md`):
+Trình bày rõ tổng số câu hỏi và phân chia thành từng phần logic (khớp `templates/project-context.md`):
 1. Phần lời mở đầu và cam kết bảo mật.
 2. Câu hỏi sàng lọc đối tượng (ví dụ: `S1`, `S2`) để đảm bảo đúng khách thể nghiên cứu.
 3. Câu hỏi khảo sát thực trạng hành vi / bối cảnh sử dụng (nếu có).
@@ -61,7 +61,7 @@ Trình bày bảng tổng hợp toàn bộ biến quan sát cho từng biến ti
 
 ## 4. Phương pháp xử lý và phân tích dữ liệu (Khóa bộ ngưỡng trước khi chạy)
 
-Trình bày tuần tự đúng các bước xử lý dữ liệu theo phần mềm khai báo trong `project-context.md`:
+Trình bày tuần tự đúng các bước xử lý dữ liệu theo phần mềm khai báo trong `templates/project-context.md`:
 
 - **Bước 1: Quy trình làm sạch dữ liệu đa lớp:** Liệt kê rõ từng tầng lọc:
   1. Tầng lọc điều kiện đối tượng (các câu sàng lọc).

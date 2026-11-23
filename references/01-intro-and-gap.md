@@ -3,7 +3,7 @@
 Áp dụng module này khi viết **Phần Mở đầu** (bố cục 4 chương) hoặc **Chương 1: Giới thiệu đề tài** (bố cục 5 chương). Mục tiêu của phần này là thiết lập một "phễu lập luận" chặt chẽ, chứng minh đề tài vừa cấp thiết trong thực tế vừa có đóng góp rõ ràng về mặt học thuật.
 
 > **Lưu ý phối hợp khi viết Chương 1 (Bố cục 5 chương):** 
-> - Đối với tiểu mục **1.1. Tổng quan nghiên cứu** (gồm 1.1.1, 1.1.2, 1.1.3): Bắt buộc nạp kèm và áp dụng kỹ thuật **Tổng hợp theo luồng lập luận 2 chiều (Thematic 2D Synthesis)** và gom nhóm tác giả tại **Mục 1 của `references/02-literature-and-hypotheses.md`**.
+> - Đối với tiểu mục **1.1. Tổng quan nghiên cứu** (theo các tiểu mục con đã khai báo trong `templates/project-context.md`): Bắt buộc nạp kèm và áp dụng kỹ thuật **Tổng hợp theo luồng lập luận 2 chiều (Thematic 2D Synthesis)** và gom nhóm tác giả tại **Mục 1 của `references/02-literature-and-hypotheses.md`**.
 > - Đối với tiểu mục **1.1.4. Đánh giá chung và khoảng trống nghiên cứu**: Áp dụng **Ma trận Khoảng trống 4 tầng** tại Mục 3 của tài liệu này.
 > - Đối với tiểu mục **1.5. Phương pháp nghiên cứu** (viết tóm tắt): Khái quát ngắn gọn thiết kế nghiên cứu từ `references/03-methodology.md`.
 
@@ -11,7 +11,7 @@
 
 ## 1. Cấu trúc chuẩn & Mạch tư duy phễu ngược
 
-Bám sát thứ tự tiểu mục trong Outline báo cáo toàn văn tại Mục 3 của `project-context.md`. Dù ở bố cục 4 chương hay 5 chương, mạch dẫn nhập phải đảm bảo trả lời trọn vẹn 5 câu hỏi: **Tại sao phải làm? -> Học thuật đang thiếu gì? -> Làm để đạt gì? -> Làm trên ai, ở đâu, khi nào? -> Bố cục bài ra sao?**
+Bám sát thứ tự tiểu mục trong Outline báo cáo toàn văn tại Mục 3 của `templates/project-context.md`. Dù ở bố cục 4 chương hay 5 chương, mạch dẫn nhập phải đảm bảo trả lời trọn vẹn 5 câu hỏi: **Tại sao phải làm? -> Học thuật đang thiếu gì? -> Làm để đạt gì? -> Làm trên ai, ở đâu, khi nào? -> Bố cục bài ra sao?**
 
 ---
 
@@ -22,7 +22,7 @@ Tuyệt đối không viết chung chung theo kiểu cảm tính. Triển khai t
 ### Chân 1: Tính cấp thiết về mặt thực tiễn (3 bước)
 1. **Bối cảnh vĩ mô / Xu hướng lớn:** Mở đầu bằng sự phát triển của hiện tượng/công nghệ/thị trường trên toàn cầu và tại Việt Nam (có dẫn nguồn báo cáo uy tín nếu có trong kho tài liệu).
 2. **Mâu thuẫn / Rủi ro / Khoảng cách thực tế:** Chỉ ra mặt trái, rào cản hoặc nghịch lý đang diễn ra trực tiếp trên nhóm khách thể mục tiêu tại địa bàn nghiên cứu (ví dụ: mức độ tiếp cận nhanh nhưng năng lực kiểm soát hạn chế, hoặc tỷ lệ áp dụng thấp hơn tiềm năng).
-3. **Giá trị ứng dụng thực tiễn:** Khẳng định kết quả nghiên cứu sẽ cung cấp bằng chứng định lượng hữu ích cho những nhóm chủ thể nào (khớp chính xác với danh sách chủ thể khuyến nghị trong `project-context.md`).
+3. **Giá trị ứng dụng thực tiễn:** Khẳng định kết quả nghiên cứu sẽ cung cấp bằng chứng định lượng hữu ích cho những nhóm chủ thể nào (khớp chính xác với danh sách chủ thể khuyến nghị trong `templates/project-context.md`).
 
 ### Chân 2: Tính cấp thiết về mặt lý luận (Nối thẳng từ Khoảng trống)
 1. Khái quát nhanh hướng tiếp cận chủ đạo của các nghiên cứu đi trước.
@@ -34,7 +34,7 @@ Tuyệt đối không viết chung chung theo kiểu cảm tính. Triển khai t
 
 ## 3. Công thức Ma trận Khoảng trống nghiên cứu 4 tầng (4-Layer Gap Matrix)
 
-Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đầu hoặc cuối phần Tổng quan nghiên cứu), không liệt kê vụn vặt mà hệ thống hóa theo tối đa 4 tầng học thuật (chọn đúng các tầng khớp với đề tài trong `project-context.md`):
+Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đầu hoặc cuối phần Tổng quan nghiên cứu), không liệt kê vụn vặt mà hệ thống hóa theo tối đa 4 tầng học thuật (chọn đúng các tầng khớp với đề tài trong `templates/project-context.md`):
 
 1. **Khoảng trống về cách đo lường / Khía cạnh của biến:** Các nghiên cứu trước mới tiếp cận đơn chiều, hoặc chỉ giới hạn trên một nền tảng/biểu hiện đơn lẻ mà chưa đo lường toàn diện cấu trúc biến.
 2. **Khoảng trống về khung lý thuyết nền:** Các nghiên cứu trước dựa trên khung lý thuyết cũ/chưa đủ độ bao phủ; đề tài tích hợp hoặc mở rộng lý thuyết nền phù hợp hơn với bản chất hành vi.
@@ -61,5 +61,5 @@ Khi viết mục **Khoảng trống nghiên cứu** (nằm trong Phần Mở đ�
 
 ### Ý nghĩa khoa học và thực tiễn & Kết cấu báo cáo
 - **Ý nghĩa khoa học (Lý luận):** Tách rõ đóng góp về bằng chứng thực nghiệm, đóng góp về tích hợp/kiểm chứng lý thuyết và đóng góp về hiệu chỉnh thang đo trong bối cảnh địa phương.
-- **Ý nghĩa thực tiễn:** Triển khai thành các đoạn văn riêng biệt gắn trực tiếp với đúng danh sách chủ thể khuyến nghị trong `project-context.md` (dùng từ nối 'Thứ nhất, Thứ hai...', không dùng dấu gạch đầu dòng).
-- **Kết cấu báo cáo:** Liệt kê chính xác tên từng chương khớp 100% với Outline báo cáo toàn văn tại Mục 3 của `project-context.md` (mỗi chương mô tả ngắn 1 câu về nội dung cốt lõi).
+- **Ý nghĩa thực tiễn:** Triển khai thành các đoạn văn riêng biệt gắn trực tiếp với đúng danh sách chủ thể khuyến nghị trong `templates/project-context.md` (dùng từ nối 'Thứ nhất, Thứ hai...', không dùng dấu gạch đầu dòng).
+- **Kết cấu báo cáo:** Liệt kê chính xác tên từng chương khớp 100% với Outline báo cáo toàn văn tại Mục 3 của `templates/project-context.md` (mỗi chương mô tả ngắn 1 câu về nội dung cốt lõi).

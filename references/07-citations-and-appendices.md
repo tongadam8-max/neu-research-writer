@@ -10,11 +10,11 @@
 - **Quy tắc số lượng tác giả:**
   - 1 tác giả: `(Kotler, 2020)`
   - 2 tác giả: Dùng `&` trong ngoặc `(Ajzen & Fishbein, 1980)` và chữ `và` ngoài ngoặc `Ajzen và Fishbein (1980)`.
-  - 3 tác giả trở lên: Bắt buộc dùng `et al.` HOẶC `và cộng sự` (AI phải kiểm tra `project-context.md` xem nhóm đang dùng tiếng Việt hay tiếng Anh để đồng bộ 1 kiểu duy nhất).
+  - 3 tác giả trở lên: Bắt buộc dùng `et al.` HOẶC `và cộng sự` (AI phải kiểm tra `templates/project-context.md` xem nhóm đang dùng tiếng Việt hay tiếng Anh để đồng bộ 1 kiểu duy nhất).
 
 ## 2. Luật Danh mục tài liệu tham khảo (References List)
 - Phân loại rõ: **Tài liệu Tiếng Việt** (xếp A-Z theo Tên) và **Tài liệu Tiếng nước ngoài** (xếp A-Z theo Họ).
 - Format chuẩn bài báo: `Họ, Chữ cái đầu tên. (Năm). Tên bài báo. Tên Tạp chí in nghiêng, Tập(Số), Trang. DOI (nếu có)`.
 
-## 3. Khuôn mẫu Phụ lục (Khóa theo project-context.md)
-Liệt kê tự động danh sách các Phụ lục theo đúng khai báo trong `project-context.md` (ví dụ: Phụ lục 1: Phiếu điều tra khảo sát, Phụ lục 2: Thống kê mô tả mẫu, Phụ lục 3: Kết quả phân tích phần mềm...).
+## 3. Khuôn mẫu Phụ lục (Khóa theo templates/project-context.md)
+Liệt kê tự động danh sách các Phụ lục theo đúng khai báo trong `templates/project-context.md` (ví dụ: Phụ lục 1: Phiếu điều tra khảo sát, Phụ lục 2: Thống kê mô tả mẫu, Phụ lục 3: Kết quả phân tích phần mềm...).

@@ -9,7 +9,7 @@
 Lỗi phổ biến nhất của bài nghiên cứu sinh viên là viết giải pháp chung chung, mang tính khẩu hiệu và không liên quan gì đến mô hình vừa kiểm định. Để triệt tiêu lỗi này, bắt buộc tuân thủ quy tắc **Neo số liệu**:
 
 ### Cấu trúc khuyến nghị chuẩn (Phân loại theo Chủ thể hoặc Nhóm giải pháp)
-Mặc định chia tiểu mục theo danh sách các nhóm chủ thể đã chốt trong `project-context.md` (ví dụ: *Đối với sinh viên; Đối với nhà trường; Đối với cơ quan quản lý* - hoặc *Cơ quan nhà nước; Tổ chức tín dụng; Doanh nghiệp*), hoặc cấu trúc theo nhóm chính sách vĩ mô/vi mô tùy theo phong cách viết của tác giả.
+Mặc định chia tiểu mục theo danh sách các nhóm chủ thể đã chốt trong `templates/project-context.md` (ví dụ: *Đối với sinh viên; Đối với nhà trường; Đối với cơ quan quản lý* - hoặc *Cơ quan nhà nước; Tổ chức tín dụng; Doanh nghiệp*), hoặc cấu trúc theo nhóm chính sách vĩ mô/vi mô tùy theo phong cách viết của tác giả.
 
 Mỗi nhóm giải pháp nên mở đầu và triển khai bám sát 3 bước:
 1. **Đoạn neo thực nghiệm (1-2 câu mở đầu):** Trích dẫn trực tiếp phát hiện từ Chương Kết quả làm căn cứ hành động.
@@ -25,7 +25,7 @@ Mỗi nhóm giải pháp nên mở đầu và triển khai bám sát 3 bước:
 
 ## 2. Quy chuẩn viết Phần Kết luận (Đóng vòng lặp học thuật)
 
-Phần Kết luận không đưa thêm số liệu mới hay trích dẫn mới chưa từng xuất hiện. Triển khai cô đọng, chặt chẽ theo 3 nội dung cốt lõi (tùy bố cục tiểu mục trong `project-context.md`):
+Phần Kết luận không đưa thêm số liệu mới hay trích dẫn mới chưa từng xuất hiện. Triển khai cô đọng, chặt chẽ theo 3 nội dung cốt lõi (tùy bố cục tiểu mục trong `templates/project-context.md`):
 
 ### 2.1. Tóm tắt kết quả chính (Trả lời thẳng Câu hỏi nghiên cứu)
 - Nhắc ngắn gọn quy mô mẫu hợp lệ, phương pháp phân tích và đối tượng khảo sát.

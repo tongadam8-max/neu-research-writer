@@ -93,6 +93,19 @@ At the end of every drafted section, append two brief blocks:
    - List remaining `[CẦN BỔ SUNG ...]` placeholders (if any).
    - List new verified sources, modified variables, or empirical metrics that should be synced into `templates/project-context.md` or `templates/chapter-handoff.md`.
 
+## QUY TẮC BỔ SUNG TÀI LIỆU THAM KHẢO MỚI (NO-CONFLICT REFERENCES)
+
+Để ngăn chặn hoàn toàn xung đột mã nguồn (merge conflict) khi 5 thành viên cùng nghiên cứu và trích dẫn các tài liệu mới, hệ thống áp dụng cơ chế phân tách vùng đệm tài liệu:
+
+1. **Trên nhánh cá nhân (`bao`, `khoi`, `lam`, `qanh`, `trinh`):**
+   - **Quy tắc bất biến:** Tuyệt đối **KHÔNG chỉnh sửa tệp `templates/project-context.md`** (giữ nguyên vẹn 27 nguồn đã đánh số từ `1.` đến `27.`).
+   - **Ghi nhận nguồn mới vào vùng đệm:** Khi thành viên cung cấp tài liệu mới hợp lệ ngoài 27 nguồn trên để trích dẫn vào bài viết, AI vẫn trích dẫn in-text chuẩn APA 7th bình thường trong `drafts/`, đồng thời tự động ghi nguồn đầy đủ (dạng gạch đầu dòng `-` KHÔNG đánh số, theo cú pháp `- `Tác giả (Năm)`: Trích dẫn APA 7th đầy đủ`) vào tệp riêng của thành viên đó tại `refs-staging/refs-<ten-nhanh-hien-tai>.md` (ví dụ: `refs-staging/refs-bao.md`, `refs-staging/refs-khoi.md`,...).
+   - **Định dạng ghi nguồn vùng đệm:** Dạng gạch đầu dòng `-` **KHÔNG đánh số**, tuân thủ nghiêm ngặt cú pháp:
+     `- `Tác giả (Năm)`: Trích dẫn APA 7th đầy đủ`
+
+2. **Trên nhánh tổng `BNPL-gr19`:**
+   - **Độc quyền hợp nhất:** Chỉ Trưởng nhóm mới thực hiện gộp các tệp `refs-staging/refs-*.md` vào `templates/project-context.md`, khử trùng lặp và đánh số thứ tự tiếp theo từ `28.` trở đi.
+
 ## Gotchas
 
 - **Separate proposal structure from full-report outline:** Extract baseline parameters from proposal materials, but always follow the dedicated full-report outline in Section 3 of `templates/project-context.md` (or an updated outline supplied by the member).

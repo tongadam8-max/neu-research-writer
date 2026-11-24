@@ -110,6 +110,7 @@ Mọi đoạn văn trước khi lưu vào `drafts/` bắt buộc phải vượt 
   - **Được Trưởng nhóm phê duyệt**, HOẶC
   - **Thành viên khi viết phải tự kiểm tra, đối chiếu kỹ lưỡng thông tin nguồn mới** (tên tác giả, năm xuất bản, tên bài báo, tạp chí/nhà xuất bản và kết quả thực nghiệm) trước khi đưa vào bài.
   - Tuyệt đối không để AI tự ý suy diễn hoặc bịa nguồn tham khảo.
+  - **Lưu ý vùng đệm tài liệu mới:** Không chỉnh sửa trực tiếp `templates/project-context.md` (giữ nguyên 27 nguồn gốc). Nếu cung cấp tài liệu mới ngoài danh sách này, AI sẽ tự động trích dẫn chuẩn APA 7th trong bài và lưu nguồn chưa đánh số vào tệp riêng `refs-staging/refs-<ten-nhanh-cua-ban>.md`.
 - [x] **Văn phong học thuật & Định dạng chuẩn:** Không gạch đầu dòng (-) hoặc chấm tròn (•) trong thân bài; viết thành các đoạn văn học thuật hoàn chỉnh có câu chủ đề và từ nối chuyển ý mượt mà (`Thứ nhất, Thứ hai...`).
 - [x] **Quy tắc dấu câu & Thuật ngữ:** Không bọc ngoặc kép ("...", “...”) vào các thuật ngữ chuyên ngành (như Mua trước trả sau, Hiểu biết tài chính, Mua sắm bốc đồng).
 - [x] **Zero Number Drift (Khớp số liệu tuyệt đối):** Mọi con số (cỡ mẫu $N$, tỷ lệ %, hệ số hồi quy, $p$-value...) trong đoạn văn phải khớp 100% với bảng số liệu thực nghiệm.
@@ -166,3 +167,6 @@ Dưới đây là các câu lệnh mẫu được tối ưu sẵn để bạn sa
 
 ### Viết Khuyến nghị & Hàm ý quản trị (Mục 5.3)
 > "Áp dụng `SKILL.md` và `references/05-implications-and-conclusion.md` dựa trên kết quả ở `templates/chapter-handoff.md`. Hãy viết toàn văn tiểu mục 5.3 Khuyến nghị vào file `drafts/05-5.3-Khuyen-nghi-va-Ham-y-thuc-tien.md`. Áp dụng kỹ thuật Neo số liệu: mở đầu bằng các hệ số thực nghiệm, sau đó đề xuất các giải pháp khả thi theo đúng 3 nhóm chủ thể (Sinh viên; Nhà trường & Đoàn thanh niên; Cơ quan quản lý & Fintech BNPL)."
+
+### Tổng hợp & Đánh số tài liệu tham khảo mới (Trên `BNPL-gr19`)
+> "Áp dụng `SKILL.md`, hãy gộp toàn bộ tài liệu mới từ thư mục `refs-staging/refs-*.md` vào Mục 7 của `templates/project-context.md`, tự động khử trùng lặp và đánh số tiếp từ 28 trở đi, sau đó làm trống các tệp tạm trong `refs-staging/`."

@@ -93,6 +93,24 @@ At the end of every drafted section, append two brief blocks:
    - List remaining `[CẦN BỔ SUNG ...]` placeholders (if any).
    - List new verified sources, modified variables, or empirical metrics that should be synced into `templates/project-context.md` or `templates/chapter-handoff.md`.
 
+## QUY TẮC PHÂN QUYỀN NHÁNH CÁ NHÂN (STRICT BRANCH OWNERSHIP)
+
+Để đảm bảo an toàn mã nguồn và tách biệt công việc của từng thành viên, hệ thống áp dụng quy tắc sở hữu nhánh nghiêm ngặt:
+
+1. **Danh sách 5 nhánh cá nhân cố định:**
+   - `bao`: Tống Gia Bảo
+   - `khoi`: Vũ Anh Khôi
+   - `lam`: Võ Thái Lâm
+   - `qanh`: Doãn Quỳnh Anh
+   - `trinh`: Nguyễn Thái Phương Trinh
+
+2. **Kiểm tra nhánh bắt buộc trước khi thao tác (`git branch --show-current`):**
+   - Trước khi chỉnh sửa bất kỳ tệp nào hoặc chạy `git push`, AI bắt buộc phải thực thi lệnh `git branch --show-current` để xác minh đang đứng đúng nhánh cá nhân mang tên thành viên đang thao tác.
+   - **Cấm tuyệt đối** đẩy code (`git push`) trực tiếp lên nhánh tổng `BNPL-gr19` hoặc chỉnh sửa/đẩy code sang nhánh của thành viên khác. Nếu phát hiện sai nhánh, phải dừng thao tác ngay và chuyển về đúng nhánh cá nhân trước khi tiếp tục.
+
+3. **Quy trình nộp bài qua Pull Request:**
+   - Mọi bài viết hoàn thiện trên nhánh cá nhân chỉ được nộp vào nhánh tổng `BNPL-gr19` thông qua **Pull Request** để chủ sở hữu mã nguồn (`@tongadam8-max`) xem xét và phê duyệt trước khi hợp nhất.
+
 ## QUY TẮC BỔ SUNG TÀI LIỆU THAM KHẢO MỚI (NO-CONFLICT REFERENCES)
 
 Để ngăn chặn hoàn toàn xung đột mã nguồn (merge conflict) khi 5 thành viên cùng nghiên cứu và trích dẫn các tài liệu mới, hệ thống áp dụng cơ chế phân tách vùng đệm tài liệu:
